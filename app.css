@@ -1,0 +1,156 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-image: linear-gradient(90deg,
+      rgb(50, 140, 200),
+      rgb(25, 180, 180));
+}
+
+h1 {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 80vh;
+  position: relative;
+}
+
+.outline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 346px;
+  height: 720px;
+  border-radius: 50px;
+  background: #111111;
+  overflow: hidden;
+  position: relative;
+  border: 3px solid #252525;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+
+.threed {
+  background-image: linear-gradient(135deg, silver, #111111);
+  padding: 3px;
+  border-radius: 50px;
+}
+
+.box::after {
+  content: "";
+  bottom: 0px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(6 0px);
+  width: 370px;
+  opacity: 0.3;
+  height: 5px;
+}
+
+.screentop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+  flex-grow: 0.7;
+  width: 100%;
+}
+
+.camera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(315deg, silver, #111111);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+
+.caminner {
+  border-radius: 50%;
+  height: 80%;
+  width: 80%;
+  background-image: radial-gradient(ellipse at center,
+      black 0%,
+      rgb(13, 48, 73) 30%,
+      black 65%);
+}
+
+.speaker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(315deg, silver, #555555);
+  border-radius: 50px;
+  height: 8px;
+  width: 50px;
+  margin-left: 10px;
+}
+
+.speakerinner {
+  border-radius: 10px;
+  height: 90%;
+  width: 98%;
+  background-color: #808080;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Christian_cross.svg/733px-Christian_cross.svg.png');
+  background-size: 3%;
+
+}
+
+.screen {
+  background-image: url(https://i.pinimg.com/564x/58/9a/8e/589a8eed7ecf86f405f43f89c9151bef.jpg);
+  background-size: 100%;
+  width: 94%;
+  flex-grow: 6;
+  border-top: 4px solid rgba(0, 0, 0, 0.75);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.75);
+  border-left: 2px solid rgba(0, 0, 0, 0.75);
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
+}
+
+.screenbottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111111;
+  width: 100%;
+  flex-grow: 0.35;
+}
+
+.buttonout {
+  background-image: linear-gradient(315deg, #808080, #111111);
+  border: 1px solid #252525;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.buttonin {
+  background-color: #111111;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.buttonin:hover {
+  transform: scale(0.98);
+}
