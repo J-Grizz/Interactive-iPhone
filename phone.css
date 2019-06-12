@@ -48,8 +48,10 @@ h1 {
 }
 
 .threed {
-  background-image: linear-gradient(135deg, silver, #111111);
-  padding: 3px;
+  background-image: linear-gradient(135deg, silver, #808080);
+  padding: 3px
+    /*1.5px 1.5px 3px; */
+  ;
   border-radius: 50px;
 }
 
@@ -60,7 +62,7 @@ h1 {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
-  transform: translateY(6 0px);
+  transform: translateY(45px);
   width: 370px;
   opacity: 0.3;
   height: 5px;
@@ -112,20 +114,8 @@ h1 {
   height: 90%;
   width: 98%;
   background-color: #808080;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Christian_cross.svg/733px-Christian_cross.svg.png');
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Christian_cross.svg/733px-Christian_cross.svg.png");
   background-size: 3%;
-
-}
-
-.screen {
-  background-image: url(https://i.pinimg.com/564x/58/9a/8e/589a8eed7ecf86f405f43f89c9151bef.jpg);
-  background-size: 100%;
-  width: 94%;
-  flex-grow: 6;
-  border-top: 4px solid rgba(0, 0, 0, 0.75);
-  border-bottom: 4px solid rgba(0, 0, 0, 0.75);
-  border-left: 2px solid rgba(0, 0, 0, 0.75);
-  border-right: 2px solid rgba(0, 0, 0, 0.75);
 }
 
 .screenbottom {
