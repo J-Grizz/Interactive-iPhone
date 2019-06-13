@@ -62,7 +62,7 @@ h1 {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
-  transform: translateY(45px);
+  transform: translateY(-8px);
   width: 370px;
   opacity: 0.3;
   height: 5px;
@@ -73,7 +73,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #111111;
-  flex-grow: 0.7;
+  height: 8%;
   width: 100%;
 }
 
@@ -124,7 +124,7 @@ h1 {
   align-items: center;
   background-color: #111111;
   width: 100%;
-  flex-grow: 0.35;
+  height: 11%;
 }
 
 .buttonout {
