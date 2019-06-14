@@ -5,6 +5,9 @@ let display = document.querySelector(".screen .displayscreen");
 let home = document.querySelector(".screen .homescreen");
 let button = document.querySelector(".buttonin");
 let audio = document.querySelector("audio");
+let lock;
+let unlockTime;
+let lockTimeChecker = false;
 
 //setting date and time on load
 time();
@@ -46,4 +49,13 @@ function whoIsOnDisplay() {
   home.classList.toggle("onDisplay");
   display.classList.toggle("onDisplay");
   audio.play();
+  if (!lockTimeChecker) {
+    lock = document.querySelector(".screen .topBarCont div:nth-of-type(2) i");
+    lock.outerHTML = timeP.outerHTML;
+    lockTimeChecker = true;
+  } else {
+    unlockTime = document.querySelector(".screen .topBarCont div:nth-of-type(2) p");
+    unlockTime.outerHTML = lock.outerHTML;
+    lockTimeChecker = false;
+  }
 }

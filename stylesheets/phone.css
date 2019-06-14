@@ -11,9 +11,9 @@ html {
 body {
   font-family: sans-serif;
   margin: 0;
-  background-image: linear-gradient(90deg,
-      rgb(50, 140, 200),
-      rgb(25, 180, 180));
+  background-image: url(https://image.freepik.com/free-photo/dark-blue-product-background_53876-89503.jpg);
+  background-size: cover;
+  background-position: 0 -150px;
 }
 
 h1 {
