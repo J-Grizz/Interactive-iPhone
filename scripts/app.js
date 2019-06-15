@@ -1,9 +1,9 @@
 //Selector Section
-let timeP = document.querySelector(".screen .dtCont p:nth-of-type(1)");
-let dateP = document.querySelector(".screen .dtCont p:nth-of-type(2)");
-let display = document.querySelector(".screen .displayscreen");
-let home = document.querySelector(".screen .homescreen");
-let button = document.querySelector(".buttonin");
+let timeP = document.querySelector(".screen .dt-cont p:nth-of-type(1)");
+let dateP = document.querySelector(".screen .dt-cont p:nth-of-type(2)");
+let display = document.querySelector(".screen .display-screen");
+let home = document.querySelector(".screen .home-screen");
+let button = document.querySelector(".button-in");
 let audio = document.querySelector("audio");
 let lock;
 let unlockTime;
@@ -46,15 +46,15 @@ function day() {
 
 //whoIsOnDisplay callback
 function whoIsOnDisplay() {
-  home.classList.toggle("onDisplay");
-  display.classList.toggle("onDisplay");
+  home.classList.toggle("on-display");
+  display.classList.toggle("on-display");
   audio.play();
   if (!lockTimeChecker) {
-    lock = document.querySelector(".screen .topBarCont div:nth-of-type(2) i");
+    lock = document.querySelector(".screen .screen-top div:nth-of-type(2) i");
     lock.outerHTML = timeP.outerHTML;
     lockTimeChecker = true;
   } else {
-    unlockTime = document.querySelector(".screen .topBarCont div:nth-of-type(2) p");
+    unlockTime = document.querySelector(".screen .screen-top div:nth-of-type(2) p");
     unlockTime.outerHTML = lock.outerHTML;
     lockTimeChecker = false;
   }

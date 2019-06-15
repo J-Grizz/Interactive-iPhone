@@ -9,18 +9,18 @@ html {
 }
 
 body {
-  font-family: sans-serif;
-  margin: 0;
   background-image: url(https://image.freepik.com/free-photo/dark-blue-product-background_53876-89503.jpg);
   background-size: cover;
   background-position: 0 -150px;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 h1 {
-  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
 }
 
 .box {
@@ -33,114 +33,112 @@ h1 {
 }
 
 .outline {
+  background: #111111;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 346px;
   height: 720px;
-  border-radius: 50px;
-  background: #111111;
-  overflow: hidden;
-  position: relative;
   border: 3px solid #252525;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
 }
 
-.threed {
-  background-image: linear-gradient(135deg, silver, #808080);
-  padding: 3px
-    /*1.5px 1.5px 3px; */
-  ;
+.three-d {
+  background-image: linear-gradient(135deg, silver, #707070);
+  padding: 3px;
   border-radius: 50px;
 }
 
 .box::after {
-  content: "";
-  bottom: 0px;
-  border-radius: 100%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
-  position: absolute;
   background: rgba(0, 0, 0, 0.5);
-  transform: translateY(-8px);
+  content: "";
   width: 370px;
-  opacity: 0.3;
   height: 5px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0px;
+  transform: translateY(-8px);
+  opacity: 0.3;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
 }
 
-.screentop {
+.phone-top {
+  background-color: #111111;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #111111;
-  height: 8%;
   width: 100%;
+  height: 8%;
 }
 
 .camera {
+  background-image: linear-gradient(315deg, silver, #111111);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(315deg, silver, #111111);
-  border-radius: 50%;
   width: 10px;
   height: 10px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
-.caminner {
-  border-radius: 50%;
-  height: 80%;
-  width: 80%;
+.cam-inner {
   background-image: radial-gradient(ellipse at center,
       black 0%,
       rgb(13, 48, 73) 30%,
       black 65%);
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
 }
 
 .speaker {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: linear-gradient(315deg, silver, #555555);
-  border-radius: 50px;
-  height: 8px;
-  width: 50px;
-  margin-left: 10px;
-}
-
-.speakerinner {
-  border-radius: 10px;
-  height: 90%;
-  width: 98%;
-  background-color: #808080;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Christian_cross.svg/733px-Christian_cross.svg.png");
-  background-size: 3%;
-}
-
-.screenbottom {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50px;
+  height: 8px;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+
+.speaker-inner {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Christian_cross.svg/733px-Christian_cross.svg.png");
+  background-color: #808080;
+  background-size: 3%;
+  width: 98%;
+  height: 90%;
+  border-radius: 10px;
+}
+
+.screen-bottom {
   background-color: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 11%;
 }
 
-.buttonout {
+.button-out {
   background-image: linear-gradient(315deg, #808080, #111111);
-  border: 1px solid #252525;
   padding: 1px;
+  border: 1px solid #252525;
   border-radius: 50%;
 }
 
-.buttonin {
+.button-in {
   background-color: #111111;
   width: 48px;
   height: 48px;
   border-radius: 50%;
 }
 
-.buttonin:hover {
+.button-in:hover {
   transform: scale(0.98);
 }

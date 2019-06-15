@@ -4,147 +4,156 @@
   display: flex;
   flex-direction: column;
   font-family: "Nanum Gothic", sans-serif;
+  color: #fff;
   width: 94%;
   height: 83%;
   border-top: 4px solid rgba(0, 0, 0, 0.75);
   border-bottom: 4px solid rgba(0, 0, 0, 1);
   border-left: 2px solid rgba(0, 0, 0, 0.75);
   border-right: 2px solid rgba(0, 0, 0, 0.75);
-  color: #fff;
   overflow: hidden;
 }
 
-.onDisplay {
-  height: 100% !important;
-  opacity: 1 !important;
-  z-index: 1 !important;
-}
+/* Container at top of screen */
 
-.screen .homescreen {
-  opacity: 0;
+.screen .screen-top {
   display: flex;
-  flex-direction: column;
   height: 0;
-  width: 100%;
-  z-index: 0;
-}
-
-.screen .displayscreen {
-  font-size: 0.3rem;
-  opacity: 0;
-  padding: 30px 10px 5px 10px;
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  grid-template-rows: 15% 15% 15% 15% 15% 15%;
-  justify-items: stretch;
-  justify-content: space-evenly;
-  align-content: space-around;
-  height: 0;
-  z-index: 0;
-}
-
-.screen .displayscreen div {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.screen .displayscreen a {
-  overflow: hidden;
-  background-image: url(/images/appPlaceholder.png);
-  background-position: -18px -7px;
-  background-size: 165%;
-  width: 90%;
-  height: 70%;
-}
-
-.screen .displayscreen p {
-  transform: translateY(-10px);
-  margin: 0;
-}
-
-.screen .topBarCont {
   z-index: 2;
-  height: 0;
-  display: flex;
 }
 
-.screen .topBarCont div {
-  padding: 4px 3px 0 3px;
+.screen .screen-top div {
   display: flex;
-  font-size: 0.4rem;
   width: 33.3%;
+  font-size: 0.4rem;
+  padding: 4px 3px 0 3px;
 }
 
-.screen .topBarCont p {
+.screen .screen-top p {
   font-weight: bold;
   font-size: 0.6rem;
   margin: 0;
 }
 
-.screen .topBarCont div:nth-of-type(1) {
+.screen .screen-top div:nth-of-type(1) {
   justify-content: space-around;
 }
 
-.screen .topBarCont div:nth-of-type(2) {
+.screen .screen-top div:nth-of-type(2) {
   justify-content: center;
 }
 
-.screen .topBarCont div:nth-of-type(3) {
+.screen .screen-top div:nth-of-type(3) {
   justify-content: flex-end;
 }
 
-.screen .homescreen .dtCont {
-  flex-grow: 20;
+/* home-screen */
+
+.screen .home-screen {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  z-index: 0;
 }
 
-.screen .homescreen .dtCont p:nth-of-type(1) {
+.screen .home-screen .dt-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 20;
+}
+
+.screen .home-screen .dt-cont p:nth-of-type(1) {
   font-size: 4rem;
   font-weight: 100;
   margin: 60px 0 0 0;
 }
 
-.screen .homescreen .dtCont p:nth-of-type(2) {
+.screen .home-screen .dt-cont p:nth-of-type(2) {
   font-size: 1rem;
   margin: 0;
 }
 
-.screen .homescreen .botCont {
+.screen .home-screen .bot-cont {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   flex-grow: 0.7;
 }
 
-.screen .homescreen .botCont p {
+.screen .home-screen .bot-cont p {
+  font-size: 0.7rem;
   height: 20px;
   margin: 0;
-  font-size: 0.7rem;
 }
 
-.screen .homescreen .botCont div {
-  margin: 0;
-  width: 100%;
+.screen .home-screen .bot-cont div {
   display: flex;
   justify-content: center;
-  height: 20px;
   align-self: flex-end;
+  width: 100%;
+  height: 20px;
+  margin: 0;
 }
 
-.screen .homescreen .botCont div i:nth-of-type(1) {
-  transform: translateY(-1px);
+.screen .home-screen .bot-cont div i:nth-of-type(1) {
   font-size: 0.1rem;
+  transform: translateY(-1px);
 }
 
-.screen .homescreen .botCont div i:nth-of-type(2) {
+.screen .home-screen .bot-cont div i:nth-of-type(2) {
+  font-size: 0.1rem;
   margin: 0 4px 0 4px;
   transform: translateY(-1px);
+}
+
+.screen .home-screen .bot-cont div i:nth-of-type(3) {
   font-size: 0.1rem;
 }
 
-.screen .homescreen .botCont div i:nth-of-type(3) {
-  font-size: 0.1rem;
+/* App dispaly screen */
+
+.screen .display-screen {
+  font-size: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: repeat(6, 15%);
+  justify-items: stretch;
+  justify-content: space-evenly;
+  align-content: space-around;
+  height: 0;
+  padding: 30px 10px 5px 10px;
+  opacity: 0;
+  z-index: 0;
+}
+
+.screen .display-screen div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.screen .display-screen a {
+  background-image: url(/images/appPlaceholder.png);
+  background-position: -18px -7px;
+  background-size: 165%;
+  width: 90%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.screen .display-screen p {
+  margin: 0;
+  transform: translateY(-10px);
+}
+
+/* animations and effects */
+
+.on-display {
+  height: 100% !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s;
 }
