@@ -9,9 +9,8 @@ html {
 }
 
 body {
-  background-image: url(https://image.freepik.com/free-photo/dark-blue-product-background_53876-89503.jpg);
-  background-size: cover;
-  background-position: 0 -150px;
+  background: linear-gradient(to right, #000000, #434343);
+  background-size: 100%;
   font-family: sans-serif;
   margin: 0;
 }
@@ -29,6 +28,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   height: 80vh;
+  margin-top: 90px;
   position: relative;
 }
 
@@ -48,7 +48,7 @@ h1 {
 }
 
 .three-d {
-  background-image: linear-gradient(135deg, silver, #707070);
+  background-image: linear-gradient(to left, silver, #707070);
   padding: 3px;
   border-radius: 50px;
 }
@@ -76,7 +76,7 @@ h1 {
 }
 
 .camera {
-  background-image: linear-gradient(315deg, silver, #111111);
+  background-image: linear-gradient(to right, silver, #333333);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,7 @@ h1 {
 }
 
 .speaker {
-  background-image: linear-gradient(315deg, silver, #555555);
+  background-image: linear-gradient(to right, silver, #555555);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +126,7 @@ h1 {
 }
 
 .button-out {
-  background-image: linear-gradient(315deg, #808080, #111111);
+  background-image: linear-gradient(to right, #808080, #111111);
   padding: 1px;
   border: 1px solid #252525;
   border-radius: 50%;

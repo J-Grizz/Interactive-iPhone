@@ -1,13 +1,14 @@
 //Selector Section
-let timeP = document.querySelector(".screen .dt-cont p:nth-of-type(1)");
-let dateP = document.querySelector(".screen .dt-cont p:nth-of-type(2)");
-let display = document.querySelector(".screen .display-screen");
-let home = document.querySelector(".screen .home-screen");
+let timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
+let dateP = document.querySelector(".dt-cont p:nth-of-type(2)");
+let display = document.querySelector(".display-screen");
+let home = document.querySelector(".home-screen");
 let button = document.querySelector(".button-in");
 let audio = document.querySelector("audio");
-let lock;
+let lock = document.querySelector(".screen-top div:nth-of-type(2) i"); //select lock icon
 let unlockTime;
-let lockTimeChecker = false;
+let phoneStateChecker = false;
+let fadeInP = document.querySelector(".home-screen .bot-cont p");
 
 //setting date and time on load
 time();
@@ -46,16 +47,35 @@ function day() {
 
 //whoIsOnDisplay callback
 function whoIsOnDisplay() {
-  home.classList.toggle("on-display");
-  display.classList.toggle("on-display");
-  audio.play();
-  if (!lockTimeChecker) {
-    lock = document.querySelector(".screen .screen-top div:nth-of-type(2) i");
-    lock.outerHTML = timeP.outerHTML;
-    lockTimeChecker = true;
-  } else {
-    unlockTime = document.querySelector(".screen .screen-top div:nth-of-type(2) p");
-    unlockTime.outerHTML = lock.outerHTML;
-    lockTimeChecker = false;
+  if (!phoneStateChecker) { //if phone is locked - handle the unlock logic
+    unlockPhone();
+  } else { //if phone is unlocked handle lock logic
+    lockPhone();
   }
+  fadeInP.classList.toggle("animate-text");
+}
+
+function unlockPhone() {
+  timeP.classList.add("animate-time"); //start/add time animation
+  setTimeout(() => { //wait for animation to end
+    lock.classList.toggle("fa-lock");
+    lock.innerText = timeP.innerText;
+    home.classList.toggle("on-display"); //disable homescreen
+    display.classList.toggle("on-display"); //enable display screen
+    timeP.style.animationPlayState = "paused"; //pauses time when small
+  }, 195);
+  phoneStateChecker = true; //tell js phone is unlocked
+}
+
+function lockPhone() {
+  home.classList.toggle("on-display"); //disable display screen
+  display.classList.toggle("on-display"); //enable homescreen
+  audio.play(); //play lock sound
+  timeP.style.animationPlayState = "running"; //resume animimation
+  lock.classList.toggle("fa-lock");
+  lock.innerText = "";
+  setTimeout(() => { //wait till animation is complaete
+    timeP.classList.remove("animate-time"); //finishes/removes animation
+  }, 195)
+  phoneStateChecker = false; //tells js phone is locked again
 }
