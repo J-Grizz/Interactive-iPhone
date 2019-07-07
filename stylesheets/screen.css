@@ -1,5 +1,6 @@
 .screen {
   background-image: url(/images/cat_cute_ball_127642_1350x2400.jpg);
+  /* background-color: black; */
   background-size: cover;
   display: flex;
   flex-direction: column;

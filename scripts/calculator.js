@@ -7,9 +7,9 @@ buttons.forEach(button => {
     if (button.innerText === "AC") {
       calculation.innerText = "0";
     } else if (button.innerText === "=") {
-      calculation.innerText = eval(calculation.innerText);
+      calculation.innerText = Math.round((eval(calculation.innerText)) * 100) / 100;
     } else {
       calculation.innerText += button.innerText;
     }
   });
-});;
+});
