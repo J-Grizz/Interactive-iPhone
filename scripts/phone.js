@@ -1,4 +1,5 @@
 //Selector Section
+let screen = document.querySelector(".screen");
 let timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
 let dateP = document.querySelector(".dt-cont p:nth-of-type(2)");
 let display = document.querySelector(".display-screen");
@@ -7,9 +8,10 @@ let button = document.querySelector(".button-in");
 let audio = document.querySelector("audio");
 let lock = document.querySelector(".screen-top div:nth-of-type(2) i"); //select lock icon
 let unlockTime;
-let phoneStateChecker = false;
+let phoneStateChecker = "home-screen";
 let fadeInP = document.querySelector(".home-screen .bot-cont p");
-
+let calcApp = document.querySelector("app");
+let calculator = document.querySelector(".calculator");
 //setting date and time on load
 time();
 day();
@@ -19,7 +21,7 @@ setInterval(time, 30000);
 
 //toggle display
 button.addEventListener("click", whoIsOnDisplay);
-
+calcApp.addEventListener("click", openCalc);
 // callback functions:
 // time function
 function time() {
@@ -47,10 +49,12 @@ function day() {
 
 //whoIsOnDisplay callback
 function whoIsOnDisplay() {
-  if (!phoneStateChecker) { //if phone is locked - handle the unlock logic
+  if (phoneStateChecker === "home-screen") {
     unlockPhone();
-  } else { //if phone is unlocked handle lock logic
+  } else if (phoneStateChecker === "display-screen") {
     lockPhone();
+  } else if (phoneStateChecker === "calc-screen") {
+    closeApp();
   }
   fadeInP.classList.toggle("animate-text");
 }
@@ -64,7 +68,7 @@ function unlockPhone() {
     display.classList.toggle("on-display"); //enable display screen
     timeP.style.animationPlayState = "paused"; //pauses time when small
   }, 195);
-  phoneStateChecker = true; //tell js phone is unlocked
+  phoneStateChecker = "display-screen"; //tell js phone is unlocked
 }
 
 function lockPhone() {
@@ -77,5 +81,19 @@ function lockPhone() {
   setTimeout(() => { //wait till animation is complaete
     timeP.classList.remove("animate-time"); //finishes/removes animation
   }, 195)
-  phoneStateChecker = false; //tells js phone is locked again
+  phoneStateChecker = "home-screen"; //tells js phone is locked again
+}
+
+function openCalc() {
+  calculator.classList.toggle("on-display");
+  display.classList.toggle("on-display");
+  screen.style.backgroundImage = "none";
+  phoneStateChecker = "calc-screen";
+}
+
+function closeApp() {
+  calculator.classList.toggle("on-display");
+  display.classList.toggle("on-display");
+  screen.style.backgroundImage = "url(/images/cat_cute_ball_127642_1350x2400.jpg)";
+  phoneStateChecker = "display-screen"
 }

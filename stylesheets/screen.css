@@ -145,19 +145,24 @@
   flex-wrap: wrap;
 }
 
-.display-screen a {
+.display-screen app {
   background-image: url(/images/appPlaceholder.png);
-  background-position: -18px -7px;
+  background-position: -20px -7px;
   background-size: 165%;
-  width: 90%;
+  width: 92%;
   height: 70%;
   overflow: hidden;
 }
 
 .display-screen p {
-  margin: 0;
+  text-align: center;
   transform: translateY(-10px);
+  margin: 10px 0 0 0;
 }
+
+/* .animate-app {
+  animation: animate-app .2s linear 2 alternate running;
+} */
 
 /* animations and effects */
 
@@ -195,3 +200,17 @@
     transform: translateY(-95px) scale(0.18);
   }
 }
+
+/* @keyframes animate-app {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(2.5);
+  }
+
+  100% {
+    transform: scale(5);
+  }
+} */
