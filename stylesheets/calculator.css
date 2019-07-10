@@ -15,7 +15,7 @@
 
 .calc-display p {
   transform: scale(1, 1.6);
-  margin: .5rem;
+  margin: 0 20px 7px 0;
 }
 
 .button-cont {
@@ -24,7 +24,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: .68rem;
+  padding: 12px;
 }
 
 .buttons {
@@ -33,31 +33,31 @@
   align-items: center;
   font-size: 1.4rem;
   border-radius: 200px;
-  width: 3rem;
-  height: 3rem;
-  margin: .3rem;
+  width: 65px;
+  height: 65px;
+  margin: 5px;
 }
 
 .button-cont div:nth-of-type(17) {
   justify-content: flex-start;
   align-items: center;
-  padding-left: 1.19rem;
-  width: 5.5rem;
+  padding-left: 25px;
+  width: 115px;
 }
 
 .button-cont div {
   background-color: #333333;
 }
 
-.button-cont div:nth-child(-n+3) {
-  background-color: #A5A5A5;
+.button-cont div:nth-child(-n + 3) {
+  background-color: #a5a5a5;
   color: black;
 }
 
-.button-cont div:nth-of-type(4n+4) {
-  background-color: #F09A37;
+.button-cont div:nth-of-type(4n + 4) {
+  background-color: #f09a37;
 }
 
 .button-cont div:nth-of-type(19) {
-  background-color: #F09A37;
+  background-color: #f09a37;
 }

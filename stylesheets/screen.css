@@ -1,6 +1,5 @@
 .screen {
   background-image: url(/images/cat_cute_ball_127642_1350x2400.jpg);
-  /* background-color: black; */
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -9,10 +8,10 @@
   text-shadow: 1px 1px 5px gray;
   width: 94%;
   height: 83%;
-  border-top: 4px solid rgba(0, 0, 0, .75);
+  border-top: 4px solid rgba(0, 0, 0, 0.75);
   border-bottom: 4px solid rgba(0, 0, 0, 1);
-  border-left: 2px solid rgba(0, 0, 0, .75);
-  border-right: 2px solid rgba(0, 0, 0, .75);
+  border-left: 2px solid rgba(0, 0, 0, 0.75);
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
   overflow: hidden;
   user-select: none;
 }
@@ -21,25 +20,24 @@
 
 .screen-top {
   display: flex;
+  justify-content: baseline;
   height: 0;
-  z-index: 2;
 }
 
 .screen-top div {
   display: flex;
   width: 33.3%;
-  font-size: 0.4rem;
+  font-size: .7em;
   padding: 4px 3px 0 3px;
 }
 
 .screen-top p {
   font-weight: bold;
-  font-size: 0.6rem;
   margin: 0;
 }
 
-.screen-top div:nth-of-type(1) {
-  justify-content: space-around;
+.spaced {
+  margin: 0 8px 0 0;
 }
 
 .screen-top div:nth-of-type(2) {
@@ -69,17 +67,17 @@
 }
 
 .home-screen .dt-cont p:nth-of-type(1) {
-  font-size: 4rem;
+  font-size: 4.6em;
   font-weight: 100;
-  margin: 60px 0 0 0;
+  margin: 65px 0 0 0;
 }
 
 .animate-time {
-  animation: animate-time .2s linear 2 alternate running;
+  animation: animate-time 0.2s linear 2 alternate running;
 }
 
 .home-screen .dt-cont p:nth-of-type(2) {
-  font-size: 1rem;
+  font-size: 1.1em;
   margin: 0;
 }
 
@@ -91,7 +89,7 @@
 }
 
 .home-screen .bot-cont p {
-  font-size: 0.7rem;
+  font-size: .87em;
   height: 20px;
   margin: 0;
   opacity: 0;
@@ -111,24 +109,27 @@
 }
 
 .home-screen .bot-cont div i:nth-of-type(1) {
-  font-size: 0.1rem;
+  font-size: .9em;
   transform: translateY(-1px);
+  opacity: .8;
 }
 
 .home-screen .bot-cont div i:nth-of-type(2) {
-  font-size: 0.1rem;
-  margin: 0 4px 0 4px;
+  font-size: .9em;
+  margin: 0 12px 0 8px;
   transform: translateY(-1px);
+  opacity: .8;
 }
 
 .home-screen .bot-cont div i:nth-of-type(3) {
-  font-size: 0.1rem;
+  font-size: .9em;
+  opacity: .8;
 }
 
 /* App dispaly screen */
 
 .display-screen {
-  font-size: 0.3rem;
+  font-size: 0.3em;
   display: grid;
   grid-template-columns: repeat(4, 20%);
   grid-template-rows: repeat(6, 15%);
@@ -147,10 +148,8 @@
   flex-wrap: wrap;
 }
 
-.display-screen app {
-  background-image: url(/images/appPlaceholder.png);
-  background-position: -20px -7px;
-  background-size: 165%;
+.display-screen div img {
+  padding: 0;
   width: 92%;
   height: 70%;
   overflow: hidden;
@@ -195,11 +194,11 @@
   }
 
   50% {
-    transform: translateY(-47px) scale(0.59);
+    transform: translateY(-20px) scale(0.59);
   }
 
   100% {
-    transform: translateY(-95px) scale(0.18);
+    transform: translateY(-100px) scale(0.18);
   }
 }
 

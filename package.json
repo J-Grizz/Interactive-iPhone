@@ -1,0 +1,23 @@
+{
+  "name": "interactive-iphone",
+  "version": "1.0.0",
+  "description": "This is my portfolio project which displays my ability with HTHML, pure CSS and JavaScript.",
+  "main": "app.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Grizz/Iphone-Interactive.git"
+  },
+  "author": "James Gray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Grizz/Iphone-Interactive/issues"
+  },
+  "homepage": "https://github.com/J-Grizz/Iphone-Interactive#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0"
+  }
+}

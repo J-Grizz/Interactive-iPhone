@@ -10,7 +10,7 @@ let lock = document.querySelector(".screen-top div:nth-of-type(2) i"); //select 
 let unlockTime;
 let phoneStateChecker = "home-screen";
 let fadeInP = document.querySelector(".home-screen .bot-cont p");
-let calcApp = document.querySelector("app");
+let calcApp = document.querySelector(".display-screen img");
 let calculator = document.querySelector(".calculator");
 //setting date and time on load
 time();
