@@ -14,6 +14,7 @@
   border-left: 2px solid rgba(0, 0, 0, .75);
   border-right: 2px solid rgba(0, 0, 0, .75);
   overflow: hidden;
+  user-select: none;
 }
 
 /* Container at top of screen */
