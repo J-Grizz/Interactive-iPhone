@@ -14,9 +14,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "autoprefix": "postcss stylesheets/*.css -u autoprefixer -d build/",
-    "serve": "browser-sync start --server --files 'scripts/*, stylesheets/*, app.html'"
+    "autoprefix": "postcss stylesheets/*.css -u autoprefixer -d build/ -w",
+    "serve": "browser-sync start --server --files 'scripts/*, stylesheets/*, build/*, app.html' --no-inject-changes --index app.html"
   },
   "repository": {
     "type": "git",
@@ -28,13 +27,11 @@
     "url": "https://github.com/J-Grizz/Iphone-Interactive/issues"
   },
   "homepage": "https://github.com/J-Grizz/Iphone-Interactive#readme",
-  "dependencies": {
-    "connect": "^3.7.0",
-    "serve-static": "^1.14.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
-    "postcss-cli": "^6.1.3"
+    "postcss-cli": "^6.1.3",
+    "run-all": "^1.0.1"
   }
 }

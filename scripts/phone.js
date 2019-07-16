@@ -94,6 +94,6 @@ function openCalc() {
 function closeApp() {
   calculator.classList.toggle("on-display");
   display.classList.toggle("on-display");
-  screen.style.backgroundImage = "url(/images/cat_cute_ball_127642_1350x2400.jpg)";
+  screen.style.backgroundImage = "url(/media/cat_cute_ball_127642_1350x2400.jpg)";
   phoneStateChecker = "display-screen"
 }
