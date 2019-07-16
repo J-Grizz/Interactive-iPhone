@@ -3,8 +3,20 @@
   "version": "1.0.0",
   "description": "This is my portfolio project which displays my ability with HTHML, pure CSS and JavaScript.",
   "main": "app.html",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 10",
+    "IE 11",
+    "firefox >= 4",
+    "safari 7",
+    "safari 8"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "autoprefix": "postcss stylesheets/*.css -u autoprefixer -d build/",
+    "serve": "browser-sync start --server --files 'scripts/*, stylesheets/*, app.html'"
   },
   "repository": {
     "type": "git",
@@ -17,7 +29,12 @@
   },
   "homepage": "https://github.com/J-Grizz/Iphone-Interactive#readme",
   "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0"
+    "connect": "^3.7.0",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "postcss-cli": "^6.1.3"
   }
 }
