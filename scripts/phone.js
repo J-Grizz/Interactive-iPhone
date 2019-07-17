@@ -12,8 +12,8 @@ let lock = document.querySelector(".screen-top div:nth-of-type(2) i");
 let unlockTime;
 let screenState = "home-screen";
 let fadeInP = document.querySelector(".home-screen .bot-cont p");
-let calcApp = document.querySelector(".display-screen img");
-let calculator = document.querySelector(".calculator");
+let appIcons = document.querySelectorAll(".display-screen img");
+let apps = document.querySelectorAll(".app");
 
 //====================
 //      On Load
@@ -27,9 +27,8 @@ setInterval(setTime, 30000);
 //========================
 //      Listeners
 //========================
-
 button.addEventListener("click", loadDisplay);
-calcApp.addEventListener("click", openCalc);
+appIcons.forEach(app => app.addEventListener("click", openApp));
 
 //=====================
 //      Callbacks
@@ -66,7 +65,7 @@ function loadDisplay() {
   } else if (screenState === "display-screen") {
     lockPhone();
     fadeInP.classList.toggle("animate-text");
-  } else if (screenState === "calc-screen") {
+  } else if (screenState === "open-app") {
     closeApp();
   }
 }
@@ -98,20 +97,19 @@ function lockPhone() {
   screenState = "home-screen"; //tells js phone is locked again
 }
 
-
-
-
-
-
-function openCalc() {
-  calculator.classList.toggle("on-display");
+//  Open App
+function openApp() {
+  const app = document.querySelector('.' + this.dataset.name);
+  app.classList.toggle("on-display");
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "none";
-  screenState = "calc-screen";
+  screenState = "open-app";
 }
 
+
+//  Close App
 function closeApp() {
-  calculator.classList.toggle("on-display");
+  apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "url(/media/cat_cute_ball_127642_1350x2400.jpg)";
   screenState = "display-screen"
