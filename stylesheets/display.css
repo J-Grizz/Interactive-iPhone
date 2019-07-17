@@ -1,0 +1,50 @@
+.display-screen {
+  font-size: 0.3em;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: repeat(6, 15%);
+  justify-items: stretch;
+  justify-content: space-evenly;
+  align-content: space-around;
+  height: 0;
+  padding: 30px 10px 5px 10px;
+  opacity: 0;
+  z-index: 0;
+}
+
+.display-screen div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.display-screen div img {
+  padding: 0;
+  width: 92%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.display-screen p {
+  text-align: center;
+  transform: translateY(-10px);
+  margin: 10px 0 0 0;
+}
+
+/* .animate-app {
+  animation: animate-app .2s linear 2 alternate running;
+} */
+
+/* @keyframes animate-app {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(2.5);
+  }
+
+  100% {
+    transform: scale(5);
+  }
+} */

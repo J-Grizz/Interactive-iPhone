@@ -128,3 +128,58 @@ body {
 .button-in:hover {
   transform: scale(0.98);
 }
+
+.screen {
+  background-image: url(/media/cat_cute_ball_127642_1350x2400.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nanum Gothic", sans-serif;
+  color: #fff;
+  text-shadow: 1px 1px 5px gray;
+  width: 94%;
+  height: 83%;
+  border-top: 4px solid rgba(0, 0, 0, 0.75);
+  border-bottom: 4px solid rgba(0, 0, 0, 1);
+  border-left: 2px solid rgba(0, 0, 0, 0.75);
+  border-right: 2px solid rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  user-select: none;
+}
+
+.screen-top {
+  display: flex;
+  justify-content: baseline;
+  height: 0;
+}
+
+.screen-top div {
+  display: flex;
+  width: 33.3%;
+  font-size: .7em;
+  padding: 4px 3px 0 3px;
+}
+
+.screen-top p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.spaced {
+  margin: 0 8px 0 0;
+}
+
+.screen-top div:nth-of-type(2) {
+  justify-content: center;
+}
+
+.screen-top div:nth-of-type(3) {
+  justify-content: flex-end;
+}
+
+.on-display {
+  height: 100% !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s;
+}
