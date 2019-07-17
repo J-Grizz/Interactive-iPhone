@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="build/home.css" />
     <link rel="stylesheet" href="build/display.css" />
     <link rel="stylesheet" href="build/calculator.css" />
+    <link rel="stylesheet" href="build/video-player.css" />
     <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
     <title>CCCheckout</title>
   </head>
@@ -58,8 +59,12 @@
 
             <div class="display-screen">
               <div>
-                <img data-name="calculator" src="/media/appPlaceholder.png"></img>
+                <img data-name="calculator" src="/media/Wineass-Ios7-Redesign-Calculator.ico"></img>
                 <p>Calculator App</p>
+              </div>
+              <div>
+                <img data-name="video-player" src="/media/multimedia-video-player-icon.png"></img>
+                <p>Video Player</p>
               </div>
             </div>
 
@@ -89,6 +94,21 @@
                 <div class="buttons">=</div>
               </div>
             </div>
+
+            <div class="video-player app">
+              <video class="player__video viewer" src="media/652333414.mp4"></video>
+
+              <div class="player__controls">
+                <div class="progress">
+                  <div class="progress__filled"></div>
+                </div>
+                <button data-skip="-10" class="player__button">« 10s</button>
+                <button class="player__button toggle" title="Toggle Play">►</button>
+                <button data-skip="25" class="player__button">25s »</button>
+                <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+                <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1" value="1">
+              </div>
+            </div>
           </div>
 
           <div class="phone-bottom">
@@ -102,6 +122,7 @@
     <audio src="sounds/click.mp3"></audio>
     <script src="scripts/phone.js"></script>
     <script src="scripts/calculator.js"></script>
+    <script src="scripts/video-player.js"></script>
   </body>
 
 </html>
