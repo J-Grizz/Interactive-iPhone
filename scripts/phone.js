@@ -1,27 +1,50 @@
-//=================
-//    Selectors
-//=================
-let screen = document.querySelector(".screen");
+//============================
+//    Variables & Selectors
+//============================
+let lock = document.querySelector(".screen-top div:nth-of-type(2) i");
+let fadeInP = document.querySelector(".home-screen .bot-cont p");
 let timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
 let dateP = document.querySelector(".dt-cont p:nth-of-type(2)");
+let appIcons = document.querySelectorAll(".display-screen img");
 let display = document.querySelector(".display-screen");
 let home = document.querySelector(".home-screen");
 let button = document.querySelector(".button-in");
-let audio = document.querySelector("audio");
-let lock = document.querySelector(".screen-top div:nth-of-type(2) i");
-let unlockTime;
-let screenState = "home-screen";
-let fadeInP = document.querySelector(".home-screen .bot-cont p");
-let appIcons = document.querySelectorAll(".display-screen img");
+let screen = document.querySelector(".screen");
 let apps = document.querySelectorAll(".app");
+let audio = document.querySelector("audio");
+let screenState = "home-screen";
+let unlockTime;
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
 
 //====================
 //      On Load
 //====================
 // Set date and time
-setDate();
+setDate(days, months);
 setTime();
-//update time per 30 secs
+//update time every 30 secs
 setInterval(setTime, 30000);
 
 //========================
@@ -39,25 +62,22 @@ function setTime() {
   let hrs = date.getHours().toString();
   let mins = date.getMinutes().toString();
   if (hrs.length < 2) {
-    hrs = "0" + hrs;
+    hrs = `0${hrs}`;
   }
   if (mins.length < 2) {
-    mins = "0" + mins;
+    mins = `0${mins}`;
   }
-  timeP.innerHTML = hrs + ":" + mins;
+  timeP.innerHTML = `${hrs}:${mins}`;
 }
 
-//  Set date
-function setDate() {
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const months = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
+//  Set datec
+function setDate(days, months) {
   const date = new Date();
-  dateP.innerHTML = days[date.getDay()] + ", " + date.getDate() + " " + months[date.getMonth()];
+  dateP.innerHTML =
+    `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
 }
 
-//  Load display
+//  Display Controler
 function loadDisplay() {
   if (screenState === "home-screen") {
     unlockPhone();
@@ -70,47 +90,47 @@ function loadDisplay() {
   }
 }
 
-//  Unlock Phone - change display to display screen
+//  Unlock Phone
 function unlockPhone() {
-  timeP.classList.add("animate-time"); //start/add time animation
-  setTimeout(() => { //wait for animation to end
+  timeP.classList.add("animate-time");
+  setTimeout(() => {
     lock.classList.toggle("fa-lock");
     lock.innerText = timeP.innerText;
-    home.classList.toggle("on-display"); //disable homescreen
-    display.classList.toggle("on-display"); //enable display screen
-    timeP.style.animationPlayState = "paused"; //pauses time when small
+    home.classList.toggle("on-display");
+    display.classList.toggle("on-display");
+    timeP.style.animationPlayState = "paused";
   }, 195);
-  screenState = "display-screen"; //tell js phone is unlocked
+  screenState = "display-screen";
 }
 
-// Lock Phone - change display to home screen (only from display screen)
+// Lock Phone
 function lockPhone() {
-  home.classList.toggle("on-display"); //disable display screen
-  display.classList.toggle("on-display"); //enable homescreen
-  audio.play(); //play lock sound
-  timeP.style.animationPlayState = "running"; //resume animimation
+  home.classList.toggle("on-display");
+  display.classList.toggle("on-display");
+  audio.play();
+  timeP.style.animationPlayState = "running";
   lock.classList.toggle("fa-lock");
   lock.innerText = "";
-  setTimeout(() => { //wait till animation is complaete
-    timeP.classList.remove("animate-time"); //finishes/removes animation
-  }, 195)
-  screenState = "home-screen"; //tells js phone is locked again
+  setTimeout(() => {
+    timeP.classList.remove("animate-time");
+  }, 195);
+  screenState = "home-screen";
 }
 
 //  Open App
 function openApp() {
-  const app = document.querySelector('.' + this.dataset.name);
+  const app = document.querySelector("." + this.dataset.name);
   app.classList.toggle("on-display");
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "none";
   screenState = "open-app";
 }
 
-
 //  Close App
 function closeApp() {
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
-  screen.style.backgroundImage = "url(/media/cat_cute_ball_127642_1350x2400.jpg)";
-  screenState = "display-screen"
+  screen.style.backgroundImage =
+    "url(/media/cat_cute_ball_127642_1350x2400.jpg)";
+  screenState = "display-screen";
 }
