@@ -2,7 +2,7 @@ html,
 body {
   box-sizing: border-box;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   font-family: sans-serif;
 }
@@ -10,6 +10,7 @@ body {
 body {
   background: linear-gradient(to right, #000000, #434343);
   background-size: cover;
+  padding: 100px;
 }
 
 .box {
@@ -17,8 +18,10 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 100px;
   position: relative;
+  width: 735px;
+  height: 735px;
+  margin: 0 auto;
 }
 
 .outline {
@@ -130,7 +133,7 @@ body {
 }
 
 .screen {
-  background-image: url(/media/cat_cute_ball_127642_1350x2400.jpg);
+  background-image: url(/media/cute-cat-background.jpg);
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -150,13 +153,16 @@ body {
 .screen-top {
   display: flex;
   justify-content: baseline;
+  position: relative;
   height: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 .screen-top div {
   display: flex;
   width: 33.3%;
-  font-size: .7em;
+  font-size: 0.7em;
   padding: 4px 3px 0 3px;
 }
 
@@ -178,7 +184,7 @@ body {
 }
 
 .on-display {
-  height: 100% !important;
+  height: 580px !important;
   z-index: 1 !important;
   opacity: 1 !important;
   transition: opacity 0.5s;

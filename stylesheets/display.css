@@ -1,31 +1,28 @@
 .display-screen {
   font-size: 0.3em;
-  display: grid;
-  grid-template-columns: repeat(4, 20%);
-  grid-template-rows: repeat(6, 15%);
-  justify-items: stretch;
-  justify-content: space-evenly;
-  align-content: space-around;
   height: 0;
-  padding: 30px 10px 5px 10px;
   opacity: 0;
   z-index: 0;
 }
 
-.display-screen div {
+.app-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 40px 10px;
+}
+
+.app-container div {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 76px;
 }
 
-.display-screen div img {
-  padding: 0;
-  width: 92%;
-  height: 70%;
-  overflow: hidden;
-}
 
 .display-screen p {
+  word-spacing: 69px;
   text-align: center;
   transform: translateY(-10px);
   margin: 10px 0 0 0;

@@ -131,6 +131,6 @@ function closeApp() {
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
   screen.style.backgroundImage =
-    "url(/media/cat_cute_ball_127642_1350x2400.jpg)";
+    "url(/media/cute-cat-background.jpg)";
   screenState = "display-screen";
 }

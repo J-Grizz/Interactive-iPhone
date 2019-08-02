@@ -1,6 +1,8 @@
 let calculation = document.querySelector('.calc-display p');
 const buttons = document.querySelectorAll('.buttons');
 
+
+
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     if (calculation.innerText === "0") calculation.innerText = "";

@@ -2,12 +2,27 @@
 const player = document.querySelector(".video-player");
 const video = player.querySelector(".viewer");
 const progress = player.querySelector(".progress");
-const progressBar = player.querySelector(".progress__filled");
+const progressBar = player.querySelector(".progress-filled");
 const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
-const sliders = player.querySelectorAll(".player__slider");
+const sliders = player.querySelectorAll(".player-slider");
 
-// Build FUnctions
+//new selection
+var phone = document.querySelector(".three-d");
+var controls = document.querySelector(".player-controls");
+var videoPlayer = document.querySelector(".video-player");
+
+// Build Functions
+
+function fullscreen() {
+  phone.style.transform = "rotate(-90deg)";
+  controls.style.transform = "rotate(90deg)";
+  controls.style.top = "44%";
+  controls.style.right = "37%";
+  videoPlayer.style.position = "static";
+  video.style.transform = "rotate(90deg)";
+  video.style.width = "180%";
+}
 
 function togglePlay() {
   video.paused ? video.play() : video.pause();
