@@ -40,6 +40,7 @@ body {
   background-image: linear-gradient(to left, #656565, #535353);
   padding: 3px;
   border-radius: 50px;
+  transition: all 1s;
 }
 
 .box::after {

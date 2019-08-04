@@ -73,8 +73,9 @@ function setTime() {
 //  Set datec
 function setDate(days, months) {
   const date = new Date();
-  dateP.innerHTML =
-    `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
+  dateP.innerHTML = `${days[date.getDay()]}, ${date.getDate()} ${
+    months[date.getMonth()]
+  }`;
 }
 
 //  Display Controler
@@ -87,6 +88,8 @@ function loadDisplay() {
     fadeInP.classList.toggle("animate-text");
   } else if (screenState === "open-app") {
     closeApp();
+    video.pause(); //funtion from video-player.js
+    rotateSmall(); //funtion from video-player.js
   }
 }
 
@@ -130,7 +133,6 @@ function openApp() {
 function closeApp() {
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
-  screen.style.backgroundImage =
-    "url(/media/cute-cat-background.jpg)";
+  screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
   screenState = "display-screen";
 }

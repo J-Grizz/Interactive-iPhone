@@ -1,11 +1,11 @@
 :root {
-  --white: rgba(255, 255, 255, .8);
-  --lightgray: rgba(211, 211, 211, .6);
-  --silver: rgba(192, 192, 192, .6);
-  --darkgray: rgba(169, 169, 169, .6);
-  --gray: rgba(128, 128, 128, .6);
+  --white: rgba(255, 255, 255, 0.8);
+  --lightgray: rgba(211, 211, 211, 0.6);
+  --silver: rgba(192, 192, 192, 0.6);
+  --darkgray: rgba(169, 169, 169, 0.6);
+  --gray: rgba(128, 128, 128, 0.6);
   --dark: rgba(50, 50, 50, 0.6);
-  --verydark: rgba(1, 1, 1, .6);
+  --verydark: rgba(1, 1, 1, 0.6);
 }
 
 .video-player {
@@ -17,21 +17,49 @@
   height: 0;
   z-index: 0;
   opacity: 0;
+  color: black;
 }
 
 .video {
   height: 100%;
   width: 100%;
+  transition: all 1s;
 }
 
-.fullscreen {
-  position: fixed;
+.screenstate-buttons {
+  background-color: var(--silver);
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  display: flex;
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--lightgray);
+  opacity: 0;
+  transition: opacity 4s;
+}
+
+.screenstate-buttons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  top: 0;
+  width: 50%;
+  margin: 0;
+}
+
+.rotate {
+  border-right: 1px solid var(--lightgray);
+}
+
+.resize {
+  border-left: 1px solid var(--lightgray);
 }
 
 .player-controls {
-  background: var(--silver);
+  background-color: var(--silver);
   position: absolute;
   top: 80%;
   font-weight: bolder;
@@ -43,7 +71,8 @@
   padding: 10px 0;
   border: 2px solid var(--lightgray);
   border-radius: 20px;
-
+  opacity: 0;
+  transition: opacity 4s;
 }
 
 .progress {
@@ -74,7 +103,6 @@
 .toggle {
   margin: 0 10px;
 }
-
 
 input[type="range"] {
   -webkit-appearance: none;
