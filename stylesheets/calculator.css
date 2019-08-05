@@ -7,7 +7,7 @@
   opacity: 0;
 }
 
-.calc-display {
+.calculator .calc-display {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -15,12 +15,12 @@
   flex-basis: 25%;
 }
 
-.calc-display p {
+.calculator .calc-display p {
   transform: scale(1, 1.6);
   margin: 0 20px 7px 0;
 }
 
-.button-cont {
+.calculator .button-cont {
   flex-basis: 75%;
   display: flex;
   justify-content: flex-start;
@@ -29,7 +29,7 @@
   padding: 12px;
 }
 
-.buttons {
+.calculator .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,26 +40,26 @@
   margin: 5px;
 }
 
-.button-cont div:nth-of-type(17) {
+.calculator .button-cont div:nth-of-type(17) {
   justify-content: flex-start;
   align-items: center;
   padding-left: 25px;
   width: 115px;
 }
 
-.button-cont div {
+.calculator .button-cont div {
   background-color: #333333;
 }
 
-.button-cont div:nth-child(-n + 3) {
+.calculator .button-cont div:nth-child(-n + 3) {
   background-color: #a5a5a5;
   color: black;
 }
 
-.button-cont div:nth-of-type(4n + 4) {
+.calculator .button-cont div:nth-of-type(4n + 4) {
   background-color: #f09a37;
 }
 
-.button-cont div:nth-of-type(19) {
+.calculator .button-cont div:nth-of-type(19) {
   background-color: #f09a37;
 }

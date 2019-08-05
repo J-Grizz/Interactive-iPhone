@@ -2,20 +2,19 @@
 //    Variables & Selectors
 //============================
 const player = document.querySelector(".video-player");
-const video = player.querySelector(".viewer");
-const progress = player.querySelector(".progress");
-const progressBar = player.querySelector(".progress-filled");
-const toggle = player.querySelector(".toggle");
-const skipButtons = player.querySelectorAll("[data-skip]");
-const sliders = player.querySelectorAll(".player-slider");
+const video = player.querySelector(".video-player .viewer");
+const progress = player.querySelector(".video-player .progress");
+const progressBar = player.querySelector(".video-player .progress-filled");
+const toggle = player.querySelector(".video-player .toggle");
+const skipButtons = player.querySelectorAll(".video-player [data-skip]");
+const sliders = player.querySelectorAll(".video-player .player-slider");
 
 const phone = document.querySelector(".three-d");
-const controls = document.querySelector(".player-controls");
-const videoPlayer = document.querySelector(".video-player");
-const rotate = document.querySelector(".rotate");
-const resize = document.querySelector(".resize");
-const resizeIcon = document.querySelector(".resize i");
-const screenstateController = document.querySelector(".screenstate-buttons");
+const controls = document.querySelector(".video-player .player-controls");
+const rotate = document.querySelector(".video-player .rotate");
+const resize = document.querySelector(".video-player .resize");
+const resizeIcon = document.querySelector(".video-player .resize i");
+const screenstateController = document.querySelector(".video-player .screenstate-buttons");
 
 //========================
 //      Listeners
@@ -91,15 +90,16 @@ function rotationSate() {
 }
 
 function rotateBig() {
-  phone.style.transform = "rotate(-90deg)";
-  controls.style.transform = "rotate(90deg)";
+  phone.style.transform = "rotate(90deg)";
+  controls.style.transform = "rotate(-90deg)";
   controls.style.top = "44%";
-  controls.style.right = "37%";
-  videoPlayer.style.position = "static";
-  video.style.transform = "rotate(90deg)";
+  controls.style.right = "-27%";
+  player.style.position = "static";
+  video.style.transform = "rotate(-90deg)";
   video.style.width = "180%";
-  screenstateController.style.transform = "rotate(90deg)";
-  screenstateController.style.top = "77%";
+  screenstateController.style.transform = "rotate(-90deg)";
+  screenstateController.style.top = "15%";
+  screenstateController.style.right = "75%";
 }
 
 function rotateSmall() {
@@ -107,11 +107,12 @@ function rotateSmall() {
   controls.style.transform = "";
   controls.style.top = "";
   controls.style.right = "";
-  videoPlayer.style.position = "";
+  player.style.position = "";
   video.style.transform = "";
   video.style.width = "";
   screenstateController.style.transform = "";
   screenstateController.style.top = "";
+  screenstateController.style.right = "";
 }
 
 function scaleState() {
@@ -124,7 +125,7 @@ function scaleState() {
 
 function scaleUp() {
   rotateBig();
-  phone.style.transform = "rotate(-90deg) scale(2.5)";
+  phone.style.transform = "rotate(90deg) scale(2.5)";
   resizeIcon.classList.remove("fa-arrows-alt");
   resizeIcon.classList.add("fa-compress-arrows-alt");
   rotated = true;
@@ -132,7 +133,7 @@ function scaleUp() {
 }
 
 function scaleDown() {
-  phone.style.transform = "rotate(-90deg)";
+  phone.style.transform = "rotate(90deg)";
   resizeIcon.classList.add("fa-arrows-alt");
   resizeIcon.classList.remove("fa-compress-arrows-alt");
   scaled = false;

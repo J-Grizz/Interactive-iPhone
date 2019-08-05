@@ -1,5 +1,5 @@
-let calculation = document.querySelector('.calc-display p');
-const buttons = document.querySelectorAll('.buttons');
+let calculation = document.querySelector('.calculator .calc-display p');
+const buttons = document.querySelectorAll('.calculator .buttons');
 
 
 

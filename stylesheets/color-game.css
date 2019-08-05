@@ -1,0 +1,123 @@
+.color-game {
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.color-game header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 150px;
+  background: linear-gradient(137.9deg, rgba(78, 156, 226, 1) 7.8%, rgba(62, 146, 69, 1) 16%, rgba(251, 220, 23, 1) 32.7%, rgba(242, 160, 35, 1) 50.4%, rgba(253, 12, 12, 1) 71.5%, rgba(192, 26, 129, 1) 83.1%);
+  transition: all 0.6s;
+}
+
+.color-game header h1,
+.color-game header h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin: 0px;
+  font-weight: normal;
+}
+
+.color-game header h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.color-game #top-tit {
+  margin-top: 40px;
+}
+
+.color-game #bot-tit {
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+
+/* Options bar main style */
+.color-game #options {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: rgb(58, 122, 168);
+}
+
+.color-game .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.color-game #refresh {
+  margin: 0 30%;
+}
+
+
+.color-game button {
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: rgb(100, 180, 220);
+  transition: all 0.5s;
+  outline: none;
+  border-radius: 2px;
+}
+
+.color-game button:nth-of-type(3) {
+  margin: 0 20px;
+}
+
+.color-game button:nth-of-type(1):hover {
+  color: white;
+  background-color: #309EDE;
+}
+
+.color-game button:nth-of-type(2):hover {
+  background-color: #5FEF6A;
+  color: white;
+}
+
+.color-game button:nth-of-type(3):hover {
+  color: white;
+  background-color: #FEAF3B;
+}
+
+.color-game button:nth-of-type(4):hover {
+  color: white;
+  background-color: #FF0022;
+}
+
+/* Grid of colors main style */
+.color-game main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.color-game .square {
+  width: 30%;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 5%;
+  transition: all 0.6s;
+}
+
+/* button hover effect */
+.color-game .selected {
+  background-color: rgb(58, 122, 168);
+  color: white;
+}
