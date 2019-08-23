@@ -2,15 +2,21 @@
 <html lang="en">
 
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1200, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+
     <script defer src="scripts/phone.js"></script>
     <script defer src="scripts/calculator.js"></script>
     <script defer src="scripts/video-player.js"></script>
     <script defer src="scripts/temp-converter.js"></script>
     <script defer src="scripts/color-game.js"></script>
+    <script defer src="scripts/camera-app.js"></script>
+
+    
     <link rel="stylesheet" href="build/phone.css" />
     <link rel="stylesheet" href="build/home.css" />
     <link rel="stylesheet" href="build/display.css" />
@@ -18,8 +24,12 @@
     <link rel="stylesheet" href="build/video-player.css" />
     <link rel="stylesheet" href="build/temp-converter.css" />
     <link rel="stylesheet" href="build/color-game.css" />
+    <link rel="stylesheet" href="build/camera-app.css" />
+
     <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
+
     <title>CCCheckout</title>
+
   </head>
 
   <body>
@@ -79,6 +89,10 @@
                 <div>
                   <img width="54" height="54" data-name="color-game" src="/media/color-game-icon.png"></img>
                   <p>Color Game</p>
+                </div>
+                <div>
+                  <img onclick="getCamVideo()" width="54" height="54" data-name="camera-app" src="/media/camera-icon.png"></img>
+                  <p>Camera</p>
                 </div>
                 <div>
                   <img width="54" height="54" data-name="" src="/media/appPlaceholder.png"></img>
@@ -230,6 +244,16 @@
               </main>
             </div>
 
+            <div class="camera-app app">
+                <canvas class="cam-canvas"></canvas>
+                
+                <video class="cam-video"></video>
+                <div class="cam-photos"></div>
+                <button onclick="takePhoto()"></button>
+
+            </div>
+
+
           </div>
 
 
@@ -241,7 +265,8 @@
         </div>
       </div>
     </div>
-    <audio src="sounds/click.mp3"></audio>
+    <audio class="snap" src="media/sounds/snap.mp3" hidden></audio>
+    <audio src="media/sounds/click.mp3"></audio>
   </body>
 
 </html>

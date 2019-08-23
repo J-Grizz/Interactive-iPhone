@@ -1,0 +1,48 @@
+.camera-app {
+  width: 100%;
+  height: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.camera-app .cam-canvas {
+  position: relative;
+  transform: translateX(-27%);
+  height: 100%;
+}
+
+.camera-app .cam-video {
+  height: 0;
+}
+
+.camera-app button {
+  position: relative;
+  background: none;
+  background-image: radial-gradient(ellipse at center,
+      white 0%,
+      white 50%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0) 60%,
+      white 60%,
+      white 100%);
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  transform: translateY(-165px) translateX(130px);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+.cam-photos {
+  position: relative;
+  transform: translateY(-100px) translateX(10px);
+  height: 70px;
+  width: 70px;
+  overflow: hidden;
+  border: 1px solid red;
+}
+
+.camera-app .cam-photos img {
+  transform: translate(-285px, -205px) scale(0.2);
+}

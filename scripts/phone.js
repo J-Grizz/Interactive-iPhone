@@ -70,7 +70,7 @@ function setTime() {
   timeP.innerHTML = `${hrs}:${mins}`;
 }
 
-//  Set datec
+//  Set date
 function setDate(days, months) {
   const date = new Date();
   dateP.innerHTML = `${days[date.getDay()]}, ${date.getDate()} ${
@@ -131,6 +131,10 @@ function openApp() {
 
 //  Close App
 function closeApp() {
+  if ([...cameraApp.classList].includes("on-display")) {
+    stopStreamedVideo(camVideo);
+    console.log("stopping");
+  }
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
