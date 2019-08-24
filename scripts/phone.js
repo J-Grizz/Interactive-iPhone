@@ -11,7 +11,7 @@ let home = document.querySelector(".home-screen");
 let button = document.querySelector(".button-in");
 let screen = document.querySelector(".screen");
 let apps = document.querySelectorAll(".app");
-let audio = document.querySelector("audio");
+let audio = document.querySelector(".click");
 let screenState = "home-screen";
 let unlockTime;
 const days = [
@@ -50,6 +50,7 @@ setInterval(setTime, 30000);
 //========================
 //      Listeners
 //========================
+
 button.addEventListener("click", loadDisplay);
 appIcons.forEach(app => app.addEventListener("click", openApp));
 
@@ -79,6 +80,7 @@ function setDate(days, months) {
 }
 
 //  Display Controler
+//this function works out which screen is currently being displayed and what screen to put on display if the home button is clicked. 
 function loadDisplay() {
   if (screenState === "home-screen") {
     unlockPhone();
@@ -94,6 +96,7 @@ function loadDisplay() {
 }
 
 //  Unlock Phone
+//Controlls switching the phone from the home screen and the display-apps screen plus all the animations inbetween.
 function unlockPhone() {
   timeP.classList.add("animate-time");
   setTimeout(() => {
@@ -107,6 +110,7 @@ function unlockPhone() {
 }
 
 // Lock Phone
+//Controlls switching the phone from its display-apps state back to the locked home screen.
 function lockPhone() {
   home.classList.toggle("on-display");
   display.classList.toggle("on-display");
@@ -121,6 +125,7 @@ function lockPhone() {
 }
 
 //  Open App
+//this is the logic requred to open any application.
 function openApp() {
   const app = document.querySelector("." + this.dataset.name);
   app.classList.toggle("on-display");
@@ -130,6 +135,7 @@ function openApp() {
 }
 
 //  Close App
+//This logis closes any application and includes a few special cases where functions have to be stopped before closing.
 function closeApp() {
   if ([...cameraApp.classList].includes("on-display")) {
     stopStreamedVideo(camVideo);

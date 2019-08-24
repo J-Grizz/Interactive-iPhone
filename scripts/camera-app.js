@@ -3,8 +3,8 @@ const camCanvas = document.querySelector(".camera-app .cam-canvas");
 const ctx = camCanvas.getContext("2d");
 const camPhotos = document.querySelector(".cam-photos");
 const snap = document.querySelector(".snap");
-const cameraApp = document.querySelector('.camera-app');
-
+const cameraApp = document.querySelector(".camera-app");
+const cameraPics = document.querySelectorAll(".camera-app ");
 
 function getCamVideo() {
   navigator.mediaDevices
@@ -26,7 +26,7 @@ function stopStreamedVideo(videoElem) {
   let stream = videoElem.srcObject;
   let tracks = stream.getTracks();
 
-  tracks.forEach(function (track) {
+  tracks.forEach(function(track) {
     track.stop();
   });
 
@@ -55,7 +55,7 @@ function takePhoto() {
   snap.play();
 
   const data = camCanvas.toDataURL("image/jpeg");
-  const link = document.createElement("a")
+  const link = document.createElement("a");
   link.href = data;
   link.setAttribute("download", "selfie");
   link.innerHTML = `<img src="${data}" alt="selfie" />`;
@@ -70,6 +70,5 @@ function takePhoto() {
 //   }
 //   return pixels;
 // }
-
 
 camVideo.addEventListener("canplay", paintToCanvas);
