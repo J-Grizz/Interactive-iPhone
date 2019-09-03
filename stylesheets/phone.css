@@ -2,7 +2,6 @@ html,
 body {
   box-sizing: border-box;
   padding: 0;
-  height: 100vh;
   margin: 0;
   font-family: sans-serif;
 }
@@ -19,8 +18,8 @@ body {
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  width: 735px;
-  height: 735px;
+  max-width: 735px;
+  max-height: 735px;
   margin: 0 auto;
 }
 

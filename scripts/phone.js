@@ -139,7 +139,6 @@ function openApp() {
 function closeApp() {
   if ([...cameraApp.classList].includes("on-display")) {
     stopStreamedVideo(camVideo);
-    console.log("stopping");
   }
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");

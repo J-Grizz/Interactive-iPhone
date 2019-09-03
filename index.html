@@ -16,7 +16,7 @@
     <script defer src="scripts/color-game.js"></script>
     <script defer src="scripts/camera-app.js"></script>
 
-    
+
     <link rel="stylesheet" href="build/phone.css" />
     <link rel="stylesheet" href="build/home.css" />
     <link rel="stylesheet" href="build/display.css" />
@@ -91,7 +91,8 @@
                   <p>Color Game</p>
                 </div>
                 <div>
-                  <img onclick="getCamVideo()" width="54" height="54" data-name="camera-app" src="/media/camera-icon.png"></img>
+                  <img onclick="getCamVideo()" width="54" height="54" data-name="camera-app"
+                    src="/media/camera-icon.png"></img>
                   <p>Camera</p>
                 </div>
                 <div>
@@ -152,63 +153,33 @@
               <div class="converter-container">
                 <input maxlength="3" type="number" step=".1">
                 <div class="radio-group">
-                <p>Temp to convert from:</p>
+                  <p>Temp to convert from:</p>
                   <div>
-                  <label for="from-fahrenheit">°F</label>
-                  <input
-                    id="from-fahrenheit"
-                    class="radio-buttons"
-                    type="radio"
-                    name="from"
-                  />
+                    <label for="from-fahrenheit">°F</label>
+                    <input id="from-fahrenheit" class="radio-buttons" type="radio" name="from" />
                   </div>
                   <div>
-                  <label for="from-celcius">°C</label>
-                  <input
-                    id="from-celcius"
-                    class="radio-buttons"
-                    type="radio"
-                    name="from"
-                  />
+                    <label for="from-celcius">°C</label>
+                    <input id="from-celcius" class="radio-buttons" type="radio" name="from" />
                   </div>
                   <div>
-                  <label for="from-kelvin">K</label>
-                  <input
-                    id="from-kelvin"
-                    class="radio-buttons"
-                    type="radio"
-                    name="from"
-                  />
+                    <label for="from-kelvin">K</label>
+                    <input id="from-kelvin" class="radio-buttons" type="radio" name="from" />
                   </div>
                 </div>
                 <div class="radio-group">
-                <p>Temp to convert to:</p>
+                  <p>Temp to convert to:</p>
                   <div>
-                  <label for="to-fahrenheit">°F</label>
-                  <input
-                    id="to-fahrenheit"
-                    class="radio-buttons"
-                    type="radio"
-                    name="to"
-                  />
+                    <label for="to-fahrenheit">°F</label>
+                    <input id="to-fahrenheit" class="radio-buttons" type="radio" name="to" />
                   </div>
                   <div>
-                  <label for="to-celcius">°C</label>
-                  <input
-                    id="to-celcius"
-                    class="radio-buttons"
-                    type="radio"
-                    name="to"
-                  />
+                    <label for="to-celcius">°C</label>
+                    <input id="to-celcius" class="radio-buttons" type="radio" name="to" />
                   </div>
                   <div>
-                  <label for="to-kelvin">K</label>
-                  <input
-                    id="to-kelvin"
-                    class="radio-buttons"
-                    type="radio"
-                    name="to"
-                  />
+                    <label for="to-kelvin">K</label>
+                    <input id="to-kelvin" class="radio-buttons" type="radio" name="to" />
                   </div>
                 </div>
                 <p class="temp-result">Result</p>
@@ -222,12 +193,12 @@
                 <h1>RGB(x, y, z)</h1>
                 <h3 id="bot-tit">GUESSING GAME</h3>
               </header>
-          
+
               <div id="options">
                 <span id="message"></span>
               </div>
               <div class="buttons">
-                <button id="refresh" >New Colors</button>
+                <button id="refresh">New Colors</button>
                 <button data-squares="3" class="mode">Easy</button>
                 <button data-squares="6" class="mode">Medium</button>
                 <button data-squares="9" class="mode">Hard</button>
@@ -247,13 +218,15 @@
 
             <div class="camera-app app">
 
-                <canvas class="cam-canvas"></canvas>
-                
-                <video class="cam-video"></video>
-                <div class="cam-photos"></div>
-                <button onclick="takePhoto()"></button>
-            
+              <canvas class="cam-canvas"></canvas>
+
+              <video class="cam-video"></video>
+              <div class="cam-photos"></div>
+              <button onclick="takePhoto()"></button>
+
             </div>
+
+
 
 
           </div>

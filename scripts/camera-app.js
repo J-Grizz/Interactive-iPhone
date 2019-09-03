@@ -1,3 +1,4 @@
+const camApp = document.querySelector('.camera-app');
 const camVideo = document.querySelector(".camera-app .cam-video");
 const camCanvas = document.querySelector(".camera-app .cam-canvas");
 const ctx = camCanvas.getContext("2d");
@@ -18,7 +19,10 @@ function getCamVideo() {
       camVideo.play();
     })
     .catch(err => {
-      console.error(`OH NO!!!`, err);
+      camApp.classList.remove("on-display");
+      display.classList.toggle("on-display");
+      screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
+      screenState = "display-screen";
     });
 }
 
@@ -26,7 +30,7 @@ function stopStreamedVideo(videoElem) {
   let stream = videoElem.srcObject;
   let tracks = stream.getTracks();
 
-  tracks.forEach(function(track) {
+  tracks.forEach(function (track) {
     track.stop();
   });
 
