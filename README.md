@@ -1,4 +1,4 @@
-#iPhone-Interactive
+# iPhone-Interactive
 A simple layout today, a functional phone tomorrow.
 
 This is a project designed to show off my skills and understanding with the core fundamentals of front-end web development.
