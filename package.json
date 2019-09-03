@@ -13,10 +13,10 @@
     "safari 8"
   ],
   "scripts": {
-    "start": "npm run serve",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "postcss stylesheets/*.css -u autoprefixer -d build/ -w",
-    "serve": "browser-sync start --server --files 'scripts/*, stylesheets/*, build/*, index.html' --no-inject-changes --index index.html"
+    "serve": "browser-sync start --server --files 'scripts/*, stylesheets/*, build/*, index.ejs' --no-inject-changes --index index.html"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,10 @@
     "url": "https://github.com/J-Grizz/Iphone-Interactive/issues"
   },
   "homepage": "https://github.com/J-Grizz/Iphone-Interactive#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
