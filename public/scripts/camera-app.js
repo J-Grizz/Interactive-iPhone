@@ -19,6 +19,7 @@ function getCamVideo() {
       camVideo.play();
     })
     .catch(err => {
+      alert("Please turn on and allow WebCam before trying to use camera app")
       camApp.classList.remove("on-display");
       display.classList.toggle("on-display");
       screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
