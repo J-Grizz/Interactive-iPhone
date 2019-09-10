@@ -3,12 +3,29 @@
 
   <head>
 
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1200, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iPhone-Interactive</title>
 
+    <!-- Google font tag -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
 
+    <!-- Font awesome CDN -->
+    <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="build/phone.css" />
+    <link rel="stylesheet" href="build/locked.css" />
+    <link rel="stylesheet" href="build/home.css" />
+    <link rel="stylesheet" href="build/calculator.css" />
+    <link rel="stylesheet" href="build/video-player.css" />
+    <link rel="stylesheet" href="build/temp-converter.css" />
+    <link rel="stylesheet" href="build/color-game.css" />
+    <link rel="stylesheet" href="build/camera-app.css" />
+
+    <!-- Scripts for phone and app functionality -->
     <script defer src="scripts/phone.js"></script>
     <script defer src="scripts/calculator.js"></script>
     <script defer src="scripts/video-player.js"></script>
@@ -16,23 +33,11 @@
     <script defer src="scripts/color-game.js"></script>
     <script defer src="scripts/camera-app.js"></script>
 
-
-    <link rel="stylesheet" href="build/phone.css" />
-    <link rel="stylesheet" href="build/home.css" />
-    <link rel="stylesheet" href="build/display.css" />
-    <link rel="stylesheet" href="build/calculator.css" />
-    <link rel="stylesheet" href="build/video-player.css" />
-    <link rel="stylesheet" href="build/temp-converter.css" />
-    <link rel="stylesheet" href="build/color-game.css" />
-    <link rel="stylesheet" href="build/camera-app.css" />
-
-    <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
-
-    <title>iPhone-Interactive</title>
-
   </head>
 
   <body>
+
+    <!-- Outer phone design -->
     <div class="box">
       <div class="three-d">
         <div class="outline">
@@ -45,7 +50,10 @@
             </div>
           </div>
 
+          <!-- Main screen container -->
           <div class="screen">
+
+            <!-- Info bar at top of screen -->
             <div class="screen-top">
               <div>
                 <i class="spaced fas fa-signal"></i>
@@ -59,7 +67,8 @@
               </div>
             </div>
 
-            <div class="home-screen on-display">
+            <!-- Lock screen -->
+            <div class="lock-screen on-display">
               <div class="dt-cont">
                 <p>09:03</p>
                 <p>Wednesday, 12 June</p>
@@ -72,7 +81,8 @@
               </div>
             </div>
 
-            <div class="display-screen">
+            <!-- Home screen -->
+            <div class="home-screen">
               <div class="app-container">
                 <div>
                   <img width="54" height="54" data-name="calculator" src="/media/calc-icon.png"></img>
@@ -102,6 +112,7 @@
               </div>
             </div>
 
+            <!-- Calculator app -->
             <div class="calculator app">
               <div class="calc-display">
                 <p>0</p>
@@ -129,6 +140,7 @@
               </div>
             </div>
 
+            <!-- Video player app -->
             <div class="video-player app">
               <video class="video viewer" src="media/demo-video.mp4"></video>
               <div class="screenstate-buttons">
@@ -144,49 +156,42 @@
                 <button data-skip="25" class="player-button">25s »</button>
 
                 <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
-                <!-- 
-                <input type="range" name="playbackRate" class="player-slider" min="0.5" max="2" step="0.1" value="1"> -->
               </div>
             </div>
 
+            <!-- Temp-converter app -->
             <div class="temp-converter app">
               <div class="converter-container">
-                <input maxlength="3" type="number" step=".1">
-                <div class="radio-group">
+
+                <input onClick="this.select();" maxlength="3" type="number" value="0" step=".1">
+                <div>
                   <p>Temp to convert from:</p>
-                  <div>
+                  <div class="radio-group">
+                    <input id="from-fahrenheit" class="option-one" type="radio" name="from" data-unit="F" />
                     <label for="from-fahrenheit">°F</label>
-                    <input id="from-fahrenheit" class="radio-buttons" type="radio" name="from" />
-                  </div>
-                  <div>
+                    <input id="from-celcius" class="option-two" type="radio" name="from" data-unit="C" />
                     <label for="from-celcius">°C</label>
-                    <input id="from-celcius" class="radio-buttons" type="radio" name="from" />
-                  </div>
-                  <div>
-                    <label for="from-kelvin">K</label>
-                    <input id="from-kelvin" class="radio-buttons" type="radio" name="from" />
+                    <input id="from-kelvin" class="option-three" type="radio" name="from" data-unit="K" />
+                    <label for="from-kelvin">°K</label>
                   </div>
                 </div>
-                <div class="radio-group">
+
+                <div>
                   <p>Temp to convert to:</p>
-                  <div>
+                  <div class="radio-group">
+                    <input id="to-fahrenheit" class="option-one" type="radio" name="to" data-unit="F" />
                     <label for="to-fahrenheit">°F</label>
-                    <input id="to-fahrenheit" class="radio-buttons" type="radio" name="to" />
-                  </div>
-                  <div>
+                    <input id="to-celcius" class="option-two" type="radio" name="to" data-unit="C" />
                     <label for="to-celcius">°C</label>
-                    <input id="to-celcius" class="radio-buttons" type="radio" name="to" />
-                  </div>
-                  <div>
-                    <label for="to-kelvin">K</label>
-                    <input id="to-kelvin" class="radio-buttons" type="radio" name="to" />
+                    <input id="to-kelvin" class="option-three" type="radio" name="to" data-unit="K" />
+                    <label for="to-kelvin">°K</label>
                   </div>
                 </div>
                 <p class="temp-result">Result</p>
-                <button onclick="convertTemp()">Convert!</button>
               </div>
             </div>
 
+            <!-- Color game app -->
             <div class="color-game app">
               <header>
                 <h3 id="top-tit">THE GREAT</h3>
@@ -216,22 +221,19 @@
               </main>
             </div>
 
+            <!-- Camera app -->
             <div class="camera-app app">
-
               <canvas class="cam-canvas"></canvas>
 
               <video class="cam-video"></video>
               <div class="cam-photos"></div>
               <button onclick="takePhoto()"></button>
-
             </div>
 
-
-
-
+            <!-- Closing screen container tag -->
           </div>
 
-
+          <!-- Final outer phone design and closing tags -->
           <div class="phone-bottom">
             <div class="button-out">
               <div class="button-in"></div>
@@ -240,8 +242,11 @@
         </div>
       </div>
     </div>
+
+    <!-- Audio links-->
     <audio class="snap" src="media/sounds/snap.mp3" hidden></audio>
-    <audio class="click" src="media/sounds/click.mp3"></audio>
+    <audio class="click" src="media/sounds/click.mp3" hidden></audio>
+
   </body>
 
 </html>

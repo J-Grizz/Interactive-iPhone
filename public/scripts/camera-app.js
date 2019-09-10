@@ -23,7 +23,7 @@ function getCamVideo() {
       camApp.classList.remove("on-display");
       display.classList.toggle("on-display");
       screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
-      screenState = "display-screen";
+      screenState = "home-screen";
     });
 }
 

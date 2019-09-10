@@ -1,18 +1,18 @@
 //============================
 //    Variables & Selectors
 //============================
-let lock = document.querySelector(".screen-top div:nth-of-type(2) i");
-let fadeInP = document.querySelector(".home-screen .bot-cont p");
-let timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
-let dateP = document.querySelector(".dt-cont p:nth-of-type(2)");
-let appIcons = document.querySelectorAll(".display-screen img");
-let display = document.querySelector(".display-screen");
-let home = document.querySelector(".home-screen");
-let button = document.querySelector(".button-in");
-let screen = document.querySelector(".screen");
-let apps = document.querySelectorAll(".app");
-let audio = document.querySelector(".click");
-let screenState = "home-screen";
+const lock = document.querySelector(".screen-top div:nth-of-type(2) i");
+const fadeInP = document.querySelector(".lock-screen .bot-cont p");
+const timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
+const dateP = document.querySelector(".dt-cont p:nth-of-type(2)");
+const appIcons = document.querySelectorAll(".home-screen img");
+const display = document.querySelector(".home-screen");
+const home = document.querySelector(".lock-screen");
+const button = document.querySelector(".button-in");
+const screen = document.querySelector(".screen");
+const apps = document.querySelectorAll(".app");
+const audio = document.querySelector(".click");
+let screenState = "lock-screen";
 let unlockTime;
 const days = [
   "Sunday",
@@ -50,7 +50,6 @@ setInterval(setTime, 30000);
 //========================
 //      Listeners
 //========================
-
 button.addEventListener("click", loadDisplay);
 appIcons.forEach(app => app.addEventListener("click", openApp));
 
@@ -71,7 +70,7 @@ function setTime() {
   timeP.innerHTML = `${hrs}:${mins}`;
 }
 
-//  Set date
+// Set date
 function setDate(days, months) {
   const date = new Date();
   dateP.innerHTML = `${days[date.getDay()]}, ${date.getDate()} ${
@@ -79,24 +78,24 @@ function setDate(days, months) {
   }`;
 }
 
-//  Display Controler
+// Display controller
 //this function works out which screen is currently being displayed and what screen to put on display if the home button is clicked. 
 function loadDisplay() {
-  if (screenState === "home-screen") {
+  if (screenState === "lock-screen") {
     unlockPhone();
     fadeInP.classList.toggle("animate-text");
-  } else if (screenState === "display-screen") {
+  } else if (screenState === "home-screen") {
     lockPhone();
     fadeInP.classList.toggle("animate-text");
   } else if (screenState === "open-app") {
     closeApp();
-    video.pause(); //funtion from video-player.js
-    rotateSmall(); //funtion from video-player.js
+    video.pause(); //defined in video-player.js
+    rotateSmall(); //defined in video-player.js
   }
 }
 
-//  Unlock Phone
-//Controlls switching the phone from the home screen and the display-apps screen plus all the animations inbetween.
+// Unlock Phone
+//Controls switching the phone screen from the lock screen to the home screen plus all the animations in between.
 function unlockPhone() {
   timeP.classList.add("animate-time");
   setTimeout(() => {
@@ -106,11 +105,11 @@ function unlockPhone() {
     display.classList.toggle("on-display");
     timeP.style.animationPlayState = "paused";
   }, 195);
-  screenState = "display-screen";
+  screenState = "home-screen";
 }
 
 // Lock Phone
-//Controlls switching the phone from its display-apps state back to the locked home screen.
+//Controls switching the phone screen from the home screen to the lock screen.
 function lockPhone() {
   home.classList.toggle("on-display");
   display.classList.toggle("on-display");
@@ -121,11 +120,11 @@ function lockPhone() {
   setTimeout(() => {
     timeP.classList.remove("animate-time");
   }, 195);
-  screenState = "home-screen";
+  screenState = "lock-screen";
 }
 
 //  Open App
-//this is the logic requred to open any application.
+//Logic to open any application.
 function openApp() {
   const app = document.querySelector("." + this.dataset.name);
   app.classList.toggle("on-display");
@@ -135,13 +134,13 @@ function openApp() {
 }
 
 //  Close App
-//This logis closes any application and includes a few special cases where functions have to be stopped before closing.
+//Logic to closes any application and includes a few special cases where functions have to be stopped before closing.
 function closeApp() {
   if ([...cameraApp.classList].includes("on-display")) {
-    stopStreamedVideo(camVideo);
+    stopStreamedVideo(camVideo); //defined in camera-app.js
   }
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
-  screenState = "display-screen";
+  screenState = "home-screen";
 }

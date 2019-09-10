@@ -132,6 +132,10 @@ body {
   transform: scale(0.98);
 }
 
+.button-in:active {
+  transform: scale(0.95);
+}
+
 .screen {
   background-image: url(/media/cute-cat-background.jpg);
   background-size: cover;

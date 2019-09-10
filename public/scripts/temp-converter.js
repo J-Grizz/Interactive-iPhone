@@ -1,32 +1,47 @@
+//===========================
+//       DOM Variables
+//===========================
 const tempInput = document.querySelector('.temp-converter input[type=number]');
 const tempFrom = document.querySelectorAll('.temp-converter input[name=from]');
 const tempTo = document.querySelectorAll('.temp-converter input[name=to]');
 const tempResult = document.querySelector('.temp-converter .temp-result');
+const allInputs = document.querySelectorAll('.temp-converter input')
+
+//===========================
+//      On Input Change
+//===========================
+allInputs.forEach(input => input.addEventListener('input', convertTemp));
 
 
-tempInput.value = 0;
-
+//================================
+//      Conversion Function 
+//================================
 function convertTemp() {
-  let tempConvertFC = Math.round(((tempInput.value - 32) * (5 / 9)) * 100) / 100;
-  let tempConvertFK = Math.round((((tempInput.value - 32) * (5 / 9)) + 273.15) * 100) / 100;
-  let tempConvertCF = Math.round(((tempInput.value * 1.8) + 32) * 100) / 100;
-  let tempConvertCK = Math.round(((tempInput.value * 1) + 273.15) * 100) / 100;
-  let tempConvertKF = Math.round((((tempInput.value - 273.15) * 1.8) + 32) * 100) / 100;
-  let tempConvertKC = Math.round((tempInput.value - 273.15) * 100) / 100;
-  const isCheckedFrom = [...tempFrom].every(button => !button.checked);
-  const isCheckedTo = [...tempTo].every(button => !button.checked);
+
+  // Conversion equations
+  const tempConvertFC = Math.round(((tempInput.value - 32) * (5 / 9)) * 100) / 100;
+  const tempConvertFK = Math.round((((tempInput.value - 32) * (5 / 9)) + 273.15) * 100) / 100;
+  const tempConvertCF = Math.round(((tempInput.value * 1.8) + 32) * 100) / 100;
+  const tempConvertCK = Math.round(((tempInput.value * 1) + 273.15) * 100) / 100;
+  const tempConvertKF = Math.round((((tempInput.value - 273.15) * 1.8) + 32) * 100) / 100;
+  const tempConvertKC = Math.round((tempInput.value - 273.15) * 100) / 100;
+
+  // Checked units
+  const isCheckedFrom = [...tempFrom].filter(button => button.checked);
+  const isCheckedTo = [...tempTo].filter(button => button.checked);
+
   let result;
 
-  if (isCheckedFrom) result = "Please choose unit to convert from";
-  else if (isCheckedTo) result = "Please choose unit to convert to";
+  // Logic to determine which buttons are checked and what display accordingly
+  if (isCheckedFrom.length === 0) result = "Choose unit to convert from.";
+  else if (isCheckedTo.length === 0) result = "Choose unit to convert to.";
+  else if (isCheckedTo[0].dataset.unit === isCheckedFrom[0].dataset.unit) result = "Choose different units.";
   else {
     if (tempFrom[0].checked) {
       if (tempTo[1].checked) {
         result = `${tempInput.value}°F = ${tempConvertFC}°C`;
       } else if (tempTo[2].checked) {
         result = `${tempInput.value}°F = ${tempConvertFK}K`;
-      } else {
-        result = "Don't be silly, choose a different unit!";
       }
     }
 
@@ -35,8 +50,6 @@ function convertTemp() {
         result = `${tempInput.value}°C = ${tempConvertCF}°F`;
       } else if (tempTo[2].checked) {
         result = `${tempInput.value}°C = ${tempConvertCK}K`;
-      } else {
-        result = "Don't be silly, choose a different unit!";
       }
     }
 
@@ -45,8 +58,6 @@ function convertTemp() {
         result = `${tempInput.value}K = ${tempConvertKF}°F`;
       } else if (tempTo[1].checked) {
         result = `${tempInput.value}K = ${tempConvertKC}°C`;
-      } else {
-        result = "Don't be silly, choose a different unit!";
       }
     }
   }

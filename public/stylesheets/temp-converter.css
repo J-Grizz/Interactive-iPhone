@@ -8,44 +8,88 @@
   z-index: 0;
   opacity: 0;
   font-size: 1.2rem;
+  color: black;
 }
 
 .converter-container {
+  background: #0099F7;
+  background: linear-gradient(125deg, #F11712, #0099F7);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  height: calc(100% - 110px);
+  padding: 60px 0 50px 0;
 }
 
 .temp-converter input[type=number] {
   text-align: center;
   background: none;
-  border: none;
-  border-bottom: 2px solid white;
+  padding: 5px 0;
+  border: solid 3px black;
+  border-radius: 10px;
   outline: none;
-  color: white;
-  font-size: 1.5rem;
-  width: 60%;
+  color: black;
+  font-size: 2rem;
+  width: 80%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+
+
+.temp-converter p {
+  text-align: center;
+  transition: all 2s;
+  color: black;
+}
+
+.temp-converter input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.temp-converter label {
+  color: black;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+.temp-converter input[type=radio]:checked+label {
+  background: black;
+}
+
+.temp-converter label+input[type=radio]+label {
+  border-left: solid 3px black;
 }
 
 .temp-converter .radio-group {
+  border: solid 3px black;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  width: 100%;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.temp-converter p {
-  width: 100%;
-  text-align: center;
-}
-
-.temp-converter button {
-  border-radius: 20px;
-  width: 40%;
-  outline: none;
-  height: 40px;
-  font-size: 1.2rem;
+.temp-result {
+  width: 90%;
+  padding: 5px 0;
+  border: solid 3px black;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
