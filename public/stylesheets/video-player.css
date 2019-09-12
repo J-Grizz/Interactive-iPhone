@@ -20,13 +20,13 @@
   color: black;
 }
 
-.video {
+.video-player .video {
   height: 100%;
   width: 100%;
   transition: all 1s;
 }
 
-.screenstate-buttons {
+.video-player .screenstate-buttons {
   background-color: var(--silver);
   position: absolute;
   top: 40px;
@@ -41,7 +41,7 @@
   transition: opacity 4s;
 }
 
-.screenstate-buttons div {
+.video-player .screenstate-buttons div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,15 +50,15 @@
   margin: 0;
 }
 
-.rotate {
+.video-player .rotate {
   border-right: 1px solid var(--lightgray);
 }
 
-.resize {
+.video-player .resize {
   border-left: 1px solid var(--lightgray);
 }
 
-.player-controls {
+.video-player .player-controls {
   background-color: var(--silver);
   position: absolute;
   top: 80%;
@@ -75,7 +75,7 @@
   transition: opacity 4s;
 }
 
-.progress {
+.video-player .progress {
   background: black;
   display: flex;
   flex-basis: 90%;
@@ -86,7 +86,7 @@
   overflow: hidden;
 }
 
-.progress-filled {
+.video-player .progress-filled {
   width: 0%;
   background-color: var(--white);
   flex: 0;
@@ -101,22 +101,22 @@
   outline: none;
 }
 
-.toggle {
+.video-player .toggle {
   margin: 0 10px;
 }
 
-input[type="range"] {
+.video-player input[type="range"] {
   -webkit-appearance: none;
   background: transparent;
   width: 90%;
   margin: 4px 5px;
 }
 
-input[type="range"]:focus {
+.video-player input[type="range"]:focus {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.video-player input[type="range"]::-webkit-slider-runnable-track {
   width: 90%;
   height: 8.4px;
   cursor: pointer;
@@ -126,7 +126,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   border: 0.2px solid var(--verydark);
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.video-player input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   width: 15px;
   border-radius: 50px;
@@ -136,10 +136,3 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -3.5px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
-
-/* 
-input[type="range"]:focus::-webkit-slider-runnable-track {
-   background: ; 
-}
-
-*/

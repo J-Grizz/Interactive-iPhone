@@ -1,4 +1,6 @@
-//getting all DOM
+//============================
+//    Variables & Selectors
+//============================
 const squares = document.querySelectorAll(".color-game .square");
 const newColors = document.querySelector(".color-game #refresh");
 const background = document.querySelector(".color-game header");
@@ -11,14 +13,23 @@ let numSqures = 6;
 let colors = [];
 let toGuess;
 
+//====================
+//      On Load
+//====================
 //setting the color to guess
 guess.textContent = toGuess;
+//initializing game
+init();
 
+//======================
+//      Listener
+//======================
 //reset listener:
 newColors.addEventListener("click", reset);
 
-init();
-
+//=====================
+//      Callbacks
+//=====================
 function init() {
   //mode listeners
   modes.forEach(mode => mode.addEventListener("click", modeSetUp));

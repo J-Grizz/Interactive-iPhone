@@ -9,50 +9,57 @@
   opacity: 0;
   font-size: 1.2rem;
   color: black;
+  background: #b92b27;
+  background: -webkit-linear-gradient(325deg, #1565C0, #b92b27);
+  background: linear-gradient(325deg, #1565C0, #b92b27);
 }
 
 .converter-container {
-  background: #0099F7;
-  background: linear-gradient(125deg, #F11712, #0099F7);
+  background-color: rgba(255, 255, 255, .15);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  height: calc(100% - 110px);
+  height: calc(90% - 110px);
   padding: 60px 0 50px 0;
+  border: solid 1.5px black;
+  width: 85%;
+  border-radius: 5px;
 }
 
 .temp-converter input[type=number] {
   text-align: center;
   background: none;
   padding: 5px 0;
-  border: solid 3px black;
-  border-radius: 10px;
+  border: solid 1.5px black;
+  border-radius: 5px;
   outline: none;
   color: black;
   font-size: 2rem;
   width: 80%;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
+.temp-converter input::-webkit-outer-spin-button,
+.temp-converter input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
+.temp-converter input[type=number] {
   -moz-appearance: textfield;
-  /* Firefox */
 }
-
 
 .temp-converter p {
   text-align: center;
   transition: all 2s;
   color: black;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.temp-converter unit-box {
+  display: contents;
 }
 
 .temp-converter input[type=radio] {
@@ -70,26 +77,35 @@ input[type=number] {
 }
 
 .temp-converter input[type=radio]:checked+label {
-  background: black;
+  box-shadow: inset 0 0 10px 3px rgba(0, 0, 0, .2)
 }
 
 .temp-converter label+input[type=radio]+label {
-  border-left: solid 3px black;
+  border-left: solid 1.5px black;
 }
 
 .temp-converter .radio-group {
-  border: solid 3px black;
+  border: solid 1.5px black;
   display: flex;
-  margin: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
-.temp-result {
-  width: 90%;
+
+.temp-converter .temp-result {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80%;
   padding: 5px 0;
-  border: solid 3px black;
-  border-radius: 10px;
+  border: solid 1.5px black;
+  border-radius: 5px;
   font-size: 1.5rem;
   font-weight: 900;
+}
+
+.temp-converter .temp-result p {
+  text-align: center;
 }

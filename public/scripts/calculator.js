@@ -1,6 +1,12 @@
+//============================
+//    Variables & Selectors
+//============================
 let calculation = document.querySelector('.calculator .calc-display p');
 const buttons = document.querySelectorAll('.calculator .buttons');
 
+//========================
+//    Simple Function
+//========================
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     if (calculation.innerText === "0") calculation.innerText = "";

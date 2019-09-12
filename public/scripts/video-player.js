@@ -7,8 +7,7 @@ const progress = player.querySelector(".video-player .progress");
 const progressBar = player.querySelector(".video-player .progress-filled");
 const toggle = player.querySelector(".video-player .toggle");
 const skipButtons = player.querySelectorAll(".video-player [data-skip]");
-const sliders = player.querySelectorAll(".video-player .player-slider");
-
+const volumeSlider = player.querySelector(".video-player .player-slider");
 const phone = document.querySelector(".three-d");
 const controls = document.querySelector(".video-player .player-controls");
 const rotate = document.querySelector(".video-player .rotate");
@@ -19,15 +18,21 @@ const screenstateController = document.querySelector(".video-player .screenstate
 //========================
 //      Listeners
 //========================
+
+//Controls the play state of the video
 toggle.addEventListener("click", togglePlay);
 video.addEventListener("click", togglePlay);
 video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
 
+// Controls skip buttons
 skipButtons.forEach(button => button.addEventListener("click", skip));
-sliders.forEach(slider => slider.addEventListener("change", slide));
-sliders.forEach(slider => slider.addEventListener("mousemove", slide));
 
+// Controls volume slider
+volumeSlider.addEventListener("change", slide);
+volumeSlider.addEventListener("mousemove", slide);
+
+// Controls video progress bar 
 let mousedown = false;
 video.addEventListener("timeupdate", updateProgress);
 progress.addEventListener("click", scrub);
@@ -35,16 +40,21 @@ progress.addEventListener("mousemove", e => mousedown && scrub(e));
 progress.addEventListener("mousedown", () => (mousedown = true));
 progress.addEventListener("mousedown", () => (mousedown = false));
 
+// Controls rotation state and button
 let rotated = false;
-rotate.addEventListener("click", rotationSate);
-let scaled = false;
-resize.addEventListener("click", scaleState);
+rotate.addEventListener("click", changeRotationState);
 
+// Controls scale state and button
+let scaled = false;
+resize.addEventListener("click", changeScaleState);
+
+// Controls fade-in
 screen.addEventListener("mouseover", () => {
   controls.style.opacity = "1";
   screenstateController.style.opacity = "1";
 });
 
+// controls fade-out
 screen.addEventListener("mouseout", () => {
   controls.style.opacity = "";
   screenstateController.style.opacity = "";
@@ -53,6 +63,8 @@ screen.addEventListener("mouseout", () => {
 //=====================
 //      Callbacks
 //=====================
+
+// video controllers logic
 function togglePlay() {
   video.paused ? video.play() : video.pause();
 }
@@ -79,17 +91,13 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-function rotationSate() {
-  if (rotated === false) {
-    rotateBig();
-    rotated = true;
-  } else {
-    rotateSmall();
-    rotated = false;
-  }
+
+// Rotation Logic
+function changeRotationState() {
+  !rotated ? rotateLandscape() : rotatePortrait();
 }
 
-function rotateBig() {
+function rotateLandscape() {
   phone.style.transform = "rotate(90deg)";
   controls.style.transform = "rotate(-90deg)";
   controls.style.top = "44%";
@@ -100,9 +108,10 @@ function rotateBig() {
   screenstateController.style.transform = "rotate(-90deg)";
   screenstateController.style.top = "15%";
   screenstateController.style.right = "75%";
+  rotated = true;
 }
 
-function rotateSmall() {
+function rotatePortrait() {
   phone.style.transform = "";
   controls.style.transform = "";
   controls.style.top = "";
@@ -113,18 +122,16 @@ function rotateSmall() {
   screenstateController.style.transform = "";
   screenstateController.style.top = "";
   screenstateController.style.right = "";
+  rotated = false;
 }
 
-function scaleState() {
-  if (scaled === false) {
-    scaleUp();
-  } else {
-    scaleDown();
-  }
+// Scale up/down Logic
+function changeScaleState() {
+  !scaled ? scaleUp() : scaleDown();
 }
 
 function scaleUp() {
-  rotateBig();
+  rotateLandscape();
   phone.style.transform = "rotate(90deg) scale(2.5)";
   resizeIcon.classList.remove("fa-arrows-alt");
   resizeIcon.classList.add("fa-compress-arrows-alt");

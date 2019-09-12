@@ -4,7 +4,7 @@
 const tempInput = document.querySelector('.temp-converter input[type=number]');
 const tempFrom = document.querySelectorAll('.temp-converter input[name=from]');
 const tempTo = document.querySelectorAll('.temp-converter input[name=to]');
-const tempResult = document.querySelector('.temp-converter .temp-result');
+const tempResult = document.querySelector('.temp-converter .temp-result p');
 const allInputs = document.querySelectorAll('.temp-converter input')
 
 //===========================
@@ -37,25 +37,42 @@ function convertTemp() {
   else if (isCheckedTo.length === 0) result = "Choose unit to convert to.";
   else if (isCheckedTo[0].dataset.unit === isCheckedFrom[0].dataset.unit) result = "Choose different units.";
   else {
+
+    // if °F is checked 
     if (tempFrom[0].checked) {
+
+      // Fahrenheit to Celsius 
       if (tempTo[1].checked) {
         result = `${tempInput.value}°F = ${tempConvertFC}°C`;
+
+
+        // Fahrenheit to Kelvin  
       } else if (tempTo[2].checked) {
         result = `${tempInput.value}°F = ${tempConvertFK}K`;
       }
     }
 
+    // if °C is checked 
     if (tempFrom[1].checked) {
+
+      // Celsius to Fahrenheit 
       if (tempTo[0].checked) {
         result = `${tempInput.value}°C = ${tempConvertCF}°F`;
+
+        // Celsius to Kelvin  
       } else if (tempTo[2].checked) {
         result = `${tempInput.value}°C = ${tempConvertCK}K`;
       }
     }
 
+    // if °K is checked 
     if (tempFrom[2].checked) {
+
+      // Kelvin to Fahrenheit  
       if (tempTo[0].checked) {
         result = `${tempInput.value}K = ${tempConvertKF}°F`;
+
+        // Kelvin to Celsius 
       } else if (tempTo[1].checked) {
         result = `${tempInput.value}K = ${tempConvertKC}°C`;
       }

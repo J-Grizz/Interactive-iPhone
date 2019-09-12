@@ -1,3 +1,6 @@
+//============================
+//    Variables & Selectors
+//============================
 const camApp = document.querySelector('.camera-app');
 const camVideo = document.querySelector(".camera-app .cam-video");
 const camCanvas = document.querySelector(".camera-app .cam-canvas");
@@ -7,17 +10,30 @@ const snap = document.querySelector(".snap");
 const cameraApp = document.querySelector(".camera-app");
 const cameraPics = document.querySelectorAll(".camera-app ");
 
+//========================
+//      Listeners
+//========================
+//Checks if media has been successfully been acquired and prints to canvas
+camVideo.addEventListener("canplay", paintToCanvas);
+
+//=====================
+//      Callbacks
+//=====================
+// Handles accessing the webcam and what to do if webcam cannot be accessed 
 function getCamVideo() {
+  //Attempt to get access
   navigator.mediaDevices
     .getUserMedia({
       video: true,
       audio: false
     })
+    // If success then start recording 
     .then(localMediaStream => {
       console.log(localMediaStream);
       camVideo.srcObject = localMediaStream;
       camVideo.play();
     })
+    // If fail, alert and close the app
     .catch(err => {
       alert("Please turn on and allow WebCam before trying to use camera app")
       camApp.classList.remove("on-display");
@@ -27,6 +43,7 @@ function getCamVideo() {
     });
 }
 
+// Handles stopping the video stream (Used in phone.js)
 function stopStreamedVideo(videoElem) {
   let stream = videoElem.srcObject;
   let tracks = stream.getTracks();
@@ -34,11 +51,12 @@ function stopStreamedVideo(videoElem) {
   tracks.forEach(function (track) {
     track.stop();
   });
-
   videoElem.srcObject = null;
 }
 
+// Handles painting the video to the canvas
 function paintToCanvas() {
+  // sets dimensions of canvas based off dimensions of video
   const width = camVideo.videoWidth;
   const height = camVideo.videoHeight;
   camCanvas.width = width;
@@ -55,6 +73,7 @@ function paintToCanvas() {
   }, 50);
 }
 
+// Handles taking photo and creating link to download photo
 function takePhoto() {
   snap.currentTime = 0;
   snap.play();
@@ -62,10 +81,13 @@ function takePhoto() {
   const data = camCanvas.toDataURL("image/jpeg");
   const link = document.createElement("a");
   link.href = data;
+  link.className = "cam-image";
   link.setAttribute("download", "selfie");
   link.innerHTML = `<img src="${data}" alt="selfie" />`;
   camPhotos.insertBefore(link, camPhotos.firstChild);
 }
+
+//Effects and filters coming soon!
 
 // function redEffect(pixels) {
 //   for (let i = 0; i < pixels.data.length; i += 4) {
@@ -75,5 +97,3 @@ function takePhoto() {
 //   }
 //   return pixels;
 // }
-
-camVideo.addEventListener("canplay", paintToCanvas);

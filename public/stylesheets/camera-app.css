@@ -16,7 +16,7 @@
 }
 
 .camera-app button {
-  position: relative;
+  position: absolute;
   background: none;
   background-image: radial-gradient(ellipse at center,
       white 0%,
@@ -28,21 +28,31 @@
   z-index: 1;
   width: 60px;
   height: 60px;
-  transform: translateY(-165px) translateX(130px);
+  transform: translateY(-72px) translateX(134px);
   border-radius: 50%;
   border: none;
   outline: none;
 }
 
 .cam-photos {
-  position: relative;
-  transform: translateY(-100px) translateX(10px);
+  position: absolute;
+  transform: translateY(-102px) translateX(5px);
   height: 70px;
-  width: 70px;
+  width: 60px;
   overflow: hidden;
-  border: 1px solid red;
+  border: 2px solid white;
+  background: black;
+}
+
+.cam-photos::after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  background-color: white;
+  height: 17px;
+  top: 53px;
 }
 
 .camera-app .cam-photos img {
-  transform: translate(-285px, -205px) scale(0.2);
+  width: 70px;
 }
