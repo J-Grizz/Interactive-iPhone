@@ -8,7 +8,6 @@ const ctx = camCanvas.getContext("2d");
 const camPhotos = document.querySelector(".cam-photos");
 const snap = document.querySelector(".snap");
 const cameraApp = document.querySelector(".camera-app");
-const cameraPics = document.querySelectorAll(".camera-app ");
 
 //========================
 //      Listeners

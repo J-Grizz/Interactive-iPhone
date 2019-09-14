@@ -89,8 +89,6 @@ function loadDisplay() {
     fadeInP.classList.toggle("animate-text");
   } else if (screenState === "open-app") {
     closeApp();
-    video.pause(); //defined in video-player.js
-    rotateSmall(); //defined in video-player.js
   }
 }
 
@@ -136,9 +134,16 @@ function openApp() {
 //  Close App
 //Logic to closes any application and includes a few special cases where functions have to be stopped before closing.
 function closeApp() {
+
   if ([...cameraApp.classList].includes("on-display")) {
     stopStreamedVideo(camVideo); //defined in camera-app.js
   }
+
+  if ([...player.classList].includes("on-display")) {
+    video.pause(); //defined in video-player.js
+    rotatePortrait(); //defined in video-player.js
+  }
+
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
   screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
