@@ -137,7 +137,7 @@ body {
 }
 
 .screen {
-  background-image: url(/media/cute-cat-background.jpg);
+  background-image: url(/public/media/cute-cat-background.jpg);
   background-size: cover;
   display: flex;
   flex-direction: column;

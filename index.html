@@ -21,22 +21,22 @@
     <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="build/phone.css" />
-    <link rel="stylesheet" href="build/locked.css" />
-    <link rel="stylesheet" href="build/home.css" />
-    <link rel="stylesheet" href="build/calculator.css" />
-    <link rel="stylesheet" href="build/video-player.css" />
-    <link rel="stylesheet" href="build/temp-converter.css" />
-    <link rel="stylesheet" href="build/color-game.css" />
-    <link rel="stylesheet" href="build/camera-app.css" />
+    <link rel="stylesheet" href="/public/build/phone.css" />
+    <link rel="stylesheet" href="/public/build/locked.css" />
+    <link rel="stylesheet" href="/public/build/home.css" />
+    <link rel="stylesheet" href="/public/build/calculator.css" />
+    <link rel="stylesheet" href="/public/build/video-player.css" />
+    <link rel="stylesheet" href="/public/build/temp-converter.css" />
+    <link rel="stylesheet" href="/public/build/color-game.css" />
+    <link rel="stylesheet" href="/public/build/camera-app.css" />
 
     <!-- Scripts for phone and app functionality -->
-    <script defer src="scripts/phone.js"></script>
-    <script defer src="scripts/calculator.js"></script>
-    <script defer src="scripts/video-player.js"></script>
-    <script defer src="scripts/temp-converter.js"></script>
-    <script defer src="scripts/color-game.js"></script>
-    <script defer src="scripts/camera-app.js"></script>
+    <script defer src="/public/scripts/phone.js"></script>
+    <script defer src="/public/scripts/calculator.js"></script>
+    <script defer src="/public/scripts/video-player.js"></script>
+    <script defer src="/public/scripts/temp-converter.js"></script>
+    <script defer src="/public/scripts/color-game.js"></script>
+    <script defer src="/public/scripts/camera-app.js"></script>
 
   </head>
 
@@ -90,24 +90,25 @@
             <div class="home-screen">
               <div class="app-container">
                 <div>
-                  <img width="54" height="54" data-name="calculator" src="/media/calc-icon.png"></img>
+                  <img width="54" height="54" data-name="calculator" src="/public/media/calc-icon.png"></img>
                   <p>Calculator</p>
                 </div>
                 <div>
-                  <img width="54" height="54" data-name="video-player" src="/media/video-player-icon.png"></img>
+                  <img width="54" height="54" data-name="video-player" src="/public/media/video-player-icon.png"></img>
                   <p>Video Player</p>
                 </div>
                 <div>
-                  <img width="54" height="54" data-name="temp-converter" src="/media/temp-converter-icon.png"></img>
+                  <img width="54" height="54" data-name="temp-converter"
+                    src="/public/media/temp-converter-icon.png"></img>
                   <p>Temperature Converter</p>
                 </div>
                 <div>
-                  <img width="54" height="54" data-name="color-game" src="/media/color-game-icon.png"></img>
+                  <img width="54" height="54" data-name="color-game" src="/public/media/color-game-icon.png"></img>
                   <p>Color Game</p>
                 </div>
                 <div>
                   <img onclick="getCamVideo()" width="54" height="54" data-name="camera-app"
-                    src="/media/camera-icon.png"></img>
+                    src="/public/media/camera-icon.png"></img>
                   <p>Camera</p>
                 </div>
 
@@ -116,7 +117,7 @@
                 <!-- Insert New App Icon Here -->
 
                 <div>
-                  <img width="54" height="54" data-name="" src="/media/appPlaceholder.png"></img>
+                  <img width="54" height="54" data-name="" src="/public/media/appPlaceholder.png"></img>
                   <p>Coming Soon</p>
                 </div>
               </div>
@@ -152,7 +153,7 @@
 
             <!-- Video player app -->
             <div class="video-player app">
-              <video class="video viewer" src="media/demo-video.mp4"></video>
+              <video class="video viewer" src="/public/media/demo-video.mp4"></video>
               <div class="screenstate-buttons">
                 <div class="rotate"><i class="fas fa-sync-alt"></i></div>
                 <div class="resize"><i class="fas fa-arrows-alt"></i></div>
@@ -265,8 +266,8 @@
     </div>
 
     <!-- Audio links-->
-    <audio class="snap" src="media/sounds/snap.mp3" hidden></audio>
-    <audio class="click" src="media/sounds/click.mp3" hidden></audio>
+    <audio class="snap" src="/public/media/sounds/snap.mp3" hidden></audio>
+    <audio class="click" src="/public/media/sounds/click.mp3" hidden></audio>
 
   </body>
 

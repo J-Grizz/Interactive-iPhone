@@ -13,10 +13,10 @@
     "safari 8"
   ],
   "scripts": {
-    "start": "node app.js",
+    "start": "npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "postcss public/stylesheets/*.css -u autoprefixer -d public/build/ -w",
-    "serve": "browser-sync start --server --files 'public/scripts/*, public/stylesheets/*, public/build/*, views/index.ejs' --no-inject-changes --index views/index.html"
+    "serve": "browser-sync start --server --files 'public/scripts/*, public/stylesheets/*, public/build/*, views/index.ejs' --no-inject-changes --index index.html"
   },
   "repository": {
     "type": "git",
