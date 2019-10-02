@@ -75,7 +75,7 @@ function setDate(days, months) {
   const date = new Date();
   dateP.innerHTML = `${days[date.getDay()]}, ${date.getDate()} ${
     months[date.getMonth()]
-  }`;
+    }`;
 }
 
 // Display controller
@@ -146,6 +146,6 @@ function closeApp() {
 
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
-  screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
+  screen.style.backgroundImage = "url(/public/media/cute-cat-background.jpg)";
   screenState = "home-screen";
 }
