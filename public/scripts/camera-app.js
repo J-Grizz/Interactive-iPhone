@@ -37,7 +37,7 @@ function getCamVideo() {
       alert("Please turn on and allow WebCam before trying to use camera app")
       camApp.classList.remove("on-display");
       display.classList.toggle("on-display");
-      screen.style.backgroundImage = "url(/media/cute-cat-background.jpg)";
+      screen.style.backgroundImage = "url(/public/media/cute-cat-background.jpg)";
       screenState = "home-screen";
     });
 }
