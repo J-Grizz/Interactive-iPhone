@@ -14,6 +14,8 @@ const rotate = document.querySelector(".video-player .rotate");
 const resize = document.querySelector(".video-player .resize");
 const resizeIcon = document.querySelector(".video-player .resize i");
 const screenstateController = document.querySelector(".video-player .screenstate-buttons");
+const screen = document.querySelector(".screen");
+
 
 //========================
 //      Listeners
@@ -145,3 +147,5 @@ function scaleDown() {
   resizeIcon.classList.remove("fa-compress-arrows-alt");
   scaled = false;
 }
+
+export { player, video, rotatePortrait };

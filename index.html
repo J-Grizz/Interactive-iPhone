@@ -12,13 +12,14 @@
     <!-- Favicon set-up -->
     <link rel="apple-touch-icon" sizes="180x180" href="/public/media/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/media/favicon-32x32.png">
-    <link rel="manifest" href="media/site.webmanifest">
+    <link rel="manifest" href="/public/media/site.webmanifest">
 
     <!-- Google font tag -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
 
     <!-- Font awesome CDN -->
-    <script src="https://kit.fontawesome.com/b853c02ca7.js"></script>
+    <script SameSite="none" src="https://kit.fontawesome.com/b853c02ca7.js" crossorigin="anonymous"></script>
+
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/public/build/phone.css" />
@@ -31,12 +32,7 @@
     <link rel="stylesheet" href="/public/build/camera-app.css" />
 
     <!-- Scripts for phone and app functionality -->
-    <script defer src="/public/scripts/phone.js"></script>
-    <script defer src="/public/scripts/calculator.js"></script>
-    <script defer src="/public/scripts/video-player.js"></script>
-    <script defer src="/public/scripts/temp-converter.js"></script>
-    <script defer src="/public/scripts/color-game.js"></script>
-    <script defer src="/public/scripts/camera-app.js"></script>
+    <script defer src="/dist/main.js"></script>
 
   </head>
 
@@ -107,7 +103,7 @@
                   <p>Color Game</p>
                 </div>
                 <div>
-                  <img onclick="getCamVideo()" width="54" height="54" data-name="camera-app"
+                  <img id="camera-icon" width="54" height="54" data-name="camera-app"
                     src="/public/media/camera-icon.png"></img>
                   <p>Camera</p>
                 </div>
@@ -241,7 +237,7 @@
 
               <video class="cam-video"></video>
               <div class="cam-photos"></div>
-              <button onclick="takePhoto()"></button>
+              <button class="photo-button"></button>
             </div>
 
             <!-- Add New App Here -->

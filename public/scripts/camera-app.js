@@ -1,6 +1,7 @@
 //============================
 //    Variables & Selectors
 //============================
+import { display, screen, screenState } from "./phone";
 const camApp = document.querySelector('.camera-app');
 const camVideo = document.querySelector(".camera-app .cam-video");
 const camCanvas = document.querySelector(".camera-app .cam-canvas");
@@ -8,12 +9,18 @@ const ctx = camCanvas.getContext("2d");
 const camPhotos = document.querySelector(".cam-photos");
 const snap = document.querySelector(".snap");
 const cameraApp = document.querySelector(".camera-app");
+const camIcon = document.querySelector("#camera-icon")
+const photoButton = document.querySelector(".camera-app .photo-button")
 
 //========================
 //      Listeners
 //========================
+
+camIcon.addEventListener("click", getCamVideo);
 //Checks if media has been successfully been acquired and prints to canvas
 camVideo.addEventListener("canplay", paintToCanvas);
+
+photoButton.addEventListener("click", takePhoto);
 
 //=====================
 //      Callbacks
@@ -96,3 +103,5 @@ function takePhoto() {
 //   }
 //   return pixels;
 // }
+
+export { cameraApp, stopStreamedVideo, camVideo };

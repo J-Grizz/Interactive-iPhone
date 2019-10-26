@@ -1,6 +1,8 @@
 //============================
 //    Variables & Selectors
 //============================
+import { cameraApp, stopStreamedVideo, camVideo } from "./camera-app";
+import { player, video, rotatePortrait } from "./video-player";
 const lock = document.querySelector(".screen-top div:nth-of-type(2) i");
 const fadeInP = document.querySelector(".lock-screen .bot-cont p");
 const timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
@@ -13,7 +15,6 @@ const screen = document.querySelector(".screen");
 const apps = document.querySelectorAll(".app");
 const audio = document.querySelector(".click");
 let screenState = "lock-screen";
-let unlockTime;
 const days = [
   "Sunday",
   "Monday",
@@ -149,3 +150,5 @@ function closeApp() {
   screen.style.backgroundImage = "url(/public/media/cute-cat-background.jpg)";
   screenState = "home-screen";
 }
+
+export { display, screen, screenState };
