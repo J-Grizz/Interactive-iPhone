@@ -1,6 +1,8 @@
 //============================
 //    Variables & Selectors
 //============================
+import "../stylesheets/camera-app.css";
+
 import { display, screen, screenState } from "./phone";
 const camApp = document.querySelector('.camera-app');
 const camVideo = document.querySelector(".camera-app .cam-video");

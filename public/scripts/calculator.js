@@ -1,6 +1,8 @@
 //============================
 //    Variables & Selectors
 //============================
+import "../stylesheets/calculator.css";
+
 let calculation = document.querySelector('.calculator .calc-display p');
 const buttons = document.querySelectorAll('.calculator .buttons');
 

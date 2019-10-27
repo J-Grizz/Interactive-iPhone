@@ -1,6 +1,8 @@
 //============================
 //    Variables & Selectors
 //============================
+import "../stylesheets/color-game.css";
+
 const squares = document.querySelectorAll(".color-game .square");
 const newColors = document.querySelector(".color-game #refresh");
 const background = document.querySelector(".color-game header");

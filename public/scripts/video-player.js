@@ -1,6 +1,8 @@
 //============================
 //    Variables & Selectors
 //============================
+import "../stylesheets/video-player.css";
+
 const player = document.querySelector(".video-player");
 const video = player.querySelector(".video-player .viewer");
 const progress = player.querySelector(".video-player .progress");

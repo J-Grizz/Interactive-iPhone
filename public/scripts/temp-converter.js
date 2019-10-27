@@ -1,6 +1,8 @@
 //===========================
 //       DOM Variables
 //===========================
+import "../stylesheets/temp-converter.css";
+
 const tempInput = document.querySelector('.temp-converter input[type=number]');
 const tempFrom = document.querySelectorAll('.temp-converter input[name=from]');
 const tempTo = document.querySelectorAll('.temp-converter input[name=to]');

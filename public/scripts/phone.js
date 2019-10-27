@@ -1,8 +1,13 @@
 //============================
 //    Variables & Selectors
 //============================
+import "../stylesheets/phone.css";
+import "../stylesheets/home.css";
+import "../stylesheets/locked.css";
+
 import { cameraApp, stopStreamedVideo, camVideo } from "./camera-app";
 import { player, video, rotatePortrait } from "./video-player";
+
 const lock = document.querySelector(".screen-top div:nth-of-type(2) i");
 const fadeInP = document.querySelector(".lock-screen .bot-cont p");
 const timeP = document.querySelector(".dt-cont p:nth-of-type(1)");
