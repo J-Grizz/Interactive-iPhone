@@ -1,18 +1,12 @@
-const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const glob = require("glob");
 
 module.exports = {
-  entry: [
-    "./public/scripts/phone.js",
-    "./public/scripts/calculator.js",
-    "./public/scripts/video-player.js",
-    "./public/scripts/temp-converter.js",
-    "./public/scripts/color-game.js",
-    "./public/scripts/camera-app.js",
-  ],
+  entry: glob.sync("./src/scripts/*.js"),
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/template.html"
+      template: "./src/template.html",
+      filename: "index.html"
     })
   ],
   module: {
@@ -20,7 +14,21 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs/"
+          }
+        }
       }
     ]
-  }
+  },
 }
