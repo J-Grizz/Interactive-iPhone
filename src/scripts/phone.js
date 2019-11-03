@@ -4,6 +4,9 @@
 import "../stylesheets/phone.css";
 import "../stylesheets/home.css";
 import "../stylesheets/locked.css";
+import "../assets/sounds/click.mp3"
+import "../assets/favicons/favicons";
+import cuteCat from "../assets/imgs/cute-cat-background.jpg"
 
 import { cameraApp, stopStreamedVideo, camVideo } from "./camera-app";
 import { player, video, rotatePortrait } from "./video-player";
@@ -152,7 +155,7 @@ function closeApp() {
 
   apps.forEach(app => app.classList.remove("on-display"));
   display.classList.toggle("on-display");
-  screen.style.backgroundImage = "url(/src/assets/cute-cat-background.jpg)";
+  screen.style.backgroundImage = `url(${cuteCat})`;
   screenState = "home-screen";
 }
 

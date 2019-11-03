@@ -5,7 +5,7 @@ module.exports = {
   entry: glob.sync("./src/scripts/*.js"),
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/template.html",
+      template: "./src/index.html",
       filename: "index.html"
     })
   ],
@@ -25,7 +25,17 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "[name].[hash].[ext]",
-            outputPath: "imgs/"
+            outputPath: "assets/imgs/"
+          }
+        }
+      },
+      {
+        test: /\.mp3$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "assets/sounds/"
           }
         }
       }

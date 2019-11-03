@@ -11,3 +11,4 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, "dist")
   },
 });
+

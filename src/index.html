@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iPhone-Interactive</title>
+
+    <!-- Favicon set-up -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <!-- Google font tag -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+
+    <!-- Font awesome CDN -->
+    <script SameSite="none" src="https://kit.fontawesome.com/b853c02ca7.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Outer phone design -->
+    <div class="box">
+      <div class="three-d">
+        <div class="outline">
+          <div class="phone-top">
+            <div class="camera">
+              <div class="cam-inner"></div>
+            </div>
+            <div class="speaker">
+              <div class="speaker-inner"></div>
+            </div>
+          </div>
+
+          <!-- Main screen container -->
+          <div class="screen">
+
+            <!-- Info bar at top of screen -->
+            <div class="screen-top">
+              <div>
+                <i class="spaced fas fa-signal"></i>
+                <i class="spaced fas fa-wifi"></i>
+              </div>
+              <div>
+                <i class="fas fa-lock"></i>
+              </div>
+              <div>
+                <p>75%</p>
+              </div>
+            </div>
+
+            <!-- Lock screen -->
+            <div class="lock-screen on-display">
+              <div class="dt-cont">
+                <p>09:03</p>
+                <p>Wednesday, 12 June</p>
+              </div>
+              <div class="bot-cont">
+                <p class="animate-text">Press Home To Unlock</p>
+                <div>
+                  <i class="fas fa-camera"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Home screen -->
+            <div class="home-screen">
+              <div class="app-container">
+                <div>
+                  <img width="54" height="54" data-name="calculator" src="./assets/imgs/calc-icon.png"></img>
+                  <p>Calculator</p>
+                </div>
+                <div>
+                  <img width="54" height="54" data-name="video-player" src="./assets/imgs/video-player-icon.png"></img>
+                  <p>Video Player</p>
+                </div>
+                <div>
+                  <img width="54" height="54" data-name="temp-converter"
+                    src="./assets/imgs/temp-converter-icon.png"></img>
+                  <p>Temperature Converter</p>
+                </div>
+                <div>
+                  <img width="54" height="54" data-name="color-game" src="./assets/imgs/color-game-icon.png"></img>
+                  <p>Color Game</p>
+                </div>
+                <div>
+                  <img id="camera-icon" width="54" height="54" data-name="camera-app"
+                    src="./assets/imgs/camera-icon.png"></img>
+                  <p>Camera</p>
+                </div>
+
+                <!-- Insert New App Icon Here -->
+                <!-- Insert New App Icon Here -->
+                <!-- Insert New App Icon Here -->
+
+                <div>
+                  <img width="54" height="54" data-name="" src="./assets/imgs/appPlaceholder.png"></img>
+                  <p>Coming Soon</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculator app -->
+            <div class="calculator app">
+              <div class="calc-display">
+                <p>0</p>
+              </div>
+              <div class="button-cont">
+                <div class="buttons">AC</div>
+                <div class="buttons">+/-</div>
+                <div class="buttons">%</div>
+                <div class="buttons">/</div>
+                <div class="buttons">7</div>
+                <div class="buttons">8</div>
+                <div class="buttons">9</div>
+                <div class="buttons">*</div>
+                <div class="buttons">4</div>
+                <div class="buttons">5</div>
+                <div class="buttons">6</div>
+                <div class="buttons">-</div>
+                <div class="buttons">1</div>
+                <div class="buttons">2</div>
+                <div class="buttons">3</div>
+                <div class="buttons">+</div>
+                <div class="buttons">0</div>
+                <div class="buttons">.</div>
+                <div class="buttons">=</div>
+              </div>
+            </div>
+
+            <!-- Video player app -->
+            <div class="video-player app">
+              <video class="video viewer" loop="true"
+                src="https://storage.coverr.co/videos/coverr-wave-top-shot-1559215758464?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTcyODEwNzU0fQ.lamNYIBq4voEBWDe7jyP331-ROUQ5xQ-HaHKbZBpyFY"></video>
+              <div class="screenstate-buttons">
+                <div class="rotate"><i class="fas fa-sync-alt"></i></div>
+                <div class="resize"><i class="fas fa-arrows-alt"></i></div>
+              </div>
+              <div class="player-controls">
+                <div class="progress">
+                  <div class="progress-filled"></div>
+                </div>
+                <button data-skip="-10" class="player-button">« 10s</button>
+                <button class="player-button toggle" title="Toggle Play">►</button>
+                <button data-skip="25" class="player-button">25s »</button>
+
+                <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
+              </div>
+            </div>
+
+            <!-- Temp-converter app -->
+            <div class="temp-converter app">
+              <div class="converter-container">
+
+                <input onClick="this.select();" maxlength="3" type="number" value="0" step=".1">
+
+                <div class="unit-box">
+                  <p>From</p>
+                  <div class="radio-group">
+                    <input id="from-fahrenheit" class="option-one" type="radio" name="from" data-unit="F" />
+                    <label for="from-fahrenheit">°F</label>
+                    <input id="from-celcius" class="option-two" type="radio" name="from" data-unit="C" />
+                    <label for="from-celcius">°C</label>
+                    <input id="from-kelvin" class="option-three" type="radio" name="from" data-unit="K" />
+                    <label for="from-kelvin">°K</label>
+                  </div>
+                </div>
+
+                <div class="unit-box">
+                  <p>To</p>
+                  <div class="radio-group">
+                    <input id="to-fahrenheit" class="option-one" type="radio" name="to" data-unit="F" />
+                    <label for="to-fahrenheit">°F</label>
+                    <input id="to-celcius" class="option-two" type="radio" name="to" data-unit="C" />
+                    <label for="to-celcius">°C</label>
+                    <input id="to-kelvin" class="option-three" type="radio" name="to" data-unit="K" />
+                    <label for="to-kelvin">°K</label>
+                  </div>
+                </div>
+                <div class="temp-result">
+                  <p>Waiting...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Color game app -->
+            <div class="color-game app">
+              <header>
+                <h3 id="top-tit">THE GREAT</h3>
+                <h1>RGB(x, y, z)</h1>
+                <h3 id="bot-tit">GUESSING GAME</h3>
+              </header>
+
+              <div id="options">
+                <span id="message"></span>
+              </div>
+              <div class="buttons">
+                <button id="refresh">New Colors</button>
+                <button data-squares="3" class="mode">Easy</button>
+                <button data-squares="6" class="mode">Medium</button>
+                <button data-squares="9" class="mode">Hard</button>
+              </div>
+              <main>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+              </main>
+            </div>
+
+            <!-- Camera app -->
+            <div class="camera-app app">
+              <canvas class="cam-canvas"></canvas>
+
+              <video class="cam-video"></video>
+              <div class="cam-photos"></div>
+              <button class="photo-button"></button>
+            </div>
+
+            <!-- Add New App Here -->
+            <!-- Add New App Here -->
+            <!-- Add New App Here -->
+            <!-- Add New App Here -->
+            <!-- Add New App Here -->
+            <!-- Add New App Here -->
+
+
+            <!-- Closing screen container tag -->
+          </div>
+
+          <!-- Final outer phone design and closing tags -->
+          <div class="phone-bottom">
+            <div class="button-out">
+              <div class="button-in"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio links-->
+    <audio class="snap" src="./assets/sounds/snap.mp3" hidden></audio>
+    <audio class="click" src="./assets/sounds/click.mp3" hidden></audio>
+
+  </body>
+
+</html>

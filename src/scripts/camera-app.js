@@ -2,8 +2,10 @@
 //    Variables & Selectors
 //============================
 import "../stylesheets/camera-app.css";
-
+import "../assets/sounds/snap.mp3"
+import cuteCat from "../assets/imgs/cute-cat-background.jpg"
 import { display, screen, screenState } from "./phone";
+
 const camApp = document.querySelector('.camera-app');
 const camVideo = document.querySelector(".camera-app .cam-video");
 const camCanvas = document.querySelector(".camera-app .cam-canvas");
@@ -46,7 +48,7 @@ function getCamVideo() {
       alert("Please turn on and allow WebCam before trying to use camera app")
       camApp.classList.remove("on-display");
       display.classList.toggle("on-display");
-      screen.style.backgroundImage = "url(/public/media/cute-cat-background.jpg)";
+      screen.style.backgroundImage = `url(${cuteCat})`;
       screenState = "home-screen";
     });
 }
