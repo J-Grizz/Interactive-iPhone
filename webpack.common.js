@@ -1,20 +1,9 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const glob = require("glob");
 
 module.exports = {
   entry: glob.sync("./src/scripts/*.js"),
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "index.html"
-    })
-  ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
       {
         test: /\.html$/,
         use: ["html-loader"]

@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "This is my portfolio project which displays my ability with HTHML, pure CSS and JavaScript.",
   "main": "dist/index.html",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "IE 10",
+    "IE 11",
+    "firefox >= 4",
+    "safari 7",
+    "safari 8"
+  ],
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
@@ -20,12 +29,16 @@
   "homepage": "https://github.com/J-Grizz/Iphone-Interactive#readme",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^9.7.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "glob": "^7.1.5",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
