@@ -1,8 +1,46 @@
-# iPhone-Interactive
-A simple layout today, a functional phone tomorrow.
+# iPhone-Interactive - An opportunity to learn.
 
-This is a project designed to show off my skills and understanding with the core fundamentals of front-end web development.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5e01f4cd-5e7c-49cb-af29-611c74fb4044/deploy-status)](https://app.netlify.com/sites/interactive-iphone/deploys)
 
-The idea behind this project was that I did'nt want to have many small applications on my portfolio so I though of a method to display a wider varienty of applications and undestanding within a single application, and thus the idea of the interactive-iPhone was born.
+Built entirely with `HTML`, `CSS` and `JavaScript` and bundled with `Webpack`.
 
-Checkout a working demo here: https://interactive-iphone.netlify.com/
+##### This project began as a means for me to:
+
+1. Practice doing something unique with the skills I learnt from the front-end section of Colt Steeles [Web Dev Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/)
+2. Solve the issue of displaying many small projects on my portfolio
+3. Practice implementing other applicable skills I learnt along the line, ie., integrating more complex apps and bundling with webpack
+
+##### It is now my hope that other starting out developers will find this project as:
+
+1. A means to get practice with reading code and understanding someone else's code (My code isn't perfect but I've made it as readable as possible)
+2. An opportunity to have a safe space in which to get used to the concepts of contributing to open-source projects
+3. Inspiration to hopefully create your own unique app and add it to the iPhone
+
+## Installing Locally
+
+First you will want get a copy of the repository in your local file system. You can do this by clicking on the green `Clone or Download` button in the top right corner of the repository and then either downloading it as zip folder or copying the URL and using the command:
+```
+git clone <repository url>
+```
+to create a copy of the repository in whichever directory the command was run from.
+
+Next you will want to navigate to the project directory:
+```
+cd <path to directory>
+```
+and then run 
+```
+npm i
+```
+to install all depedancies and boom, its all set-up. The only thing left to do is to start the program which can be done by 
+running:
+```
+npm start
+```
+that should open a new tab in your browser where you will see the deveopment build of the interactive-iPhone. Thanks to webpack magic any changes you make to the code will automatically sync with the browser, so now you're all ready to start playing around.
+
+## Contributing
+
+If this is your first time ever contributing to a open-source project then I would recomend checking out this quick, informative and interactive guide to get you started with understand the workflow: [First-Contribute](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
+
+##### **Disclaimer** at this stage the readme is still incomplete but more is coming very soon.
