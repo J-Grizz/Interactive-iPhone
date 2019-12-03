@@ -4,7 +4,7 @@ If you're new to this and you've made it this far then congratulations, I'm exci
 
 ### Things To Do
 
-I've made a list of suggestions:
+I've made a list of suggestions incase you're wondering what to do:
 
 * Add more apps - Tutorial coming soon.
 * Create an intro overlay - Let me know on the discord if you want to work on this, I have some ideas.
