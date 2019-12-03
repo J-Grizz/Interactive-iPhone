@@ -39,8 +39,12 @@ npm start
 ```
 that should open a new tab in your browser where you will see the deveopment build of the interactive-iPhone. Thanks to webpack magic any changes you make to the code will automatically sync with the browser, so now you're all ready to start playing around.
 
+<img src="https://res.cloudinary.com/dufbyqbkk/image/upload/v1575371351/Screenshot_from_2019-12-03_13-01-18_nuccjs.png" />
+
 ## Contributing
 
 If this is your first time ever contributing to a open-source project then I would recomend checking out this quick, informative and interactive guide to get you started with understand the workflow: [First-Contribute](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
+
+Ready? - [CONTRIBUTING.md]()
 
 ##### **Disclaimer** at this stage the readme is still incomplete but more is coming very soon.
