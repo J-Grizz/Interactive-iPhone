@@ -2,9 +2,9 @@
 
 If you're new to this and you've made it this far then congratulations, I'm excited to start working with you. If you have any questions, suggestions, input, ideas, or just want to say 'hi' then please join the Interactive-iPhone discord server and feel free to @ me, [here is your invite](https://discord.gg/czZTbNs). 
 
-### Things To Do.
+### Things To Do
 
-I've made a basic list of suggestions for things you might want to work on:
+I've made a list of suggestions:
 
 * Add more apps - Tutorial coming soon.
 * Create an intro overlay - Let me know on the discord if you want to work on this, I have some ideas.
