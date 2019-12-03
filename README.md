@@ -18,13 +18,13 @@ Built entirely with `HTML`, `CSS` and `JavaScript` and bundled with `Webpack`.
 
 ## Installing Locally
 
-First you will want get a copy of the repository in your local file system. You can do this by clicking on the green `Clone or Download` button in the top right corner of the repository and then either downloading it as zip folder or copying the URL and using the command:
+First, you will want to get a copy of the repository in your local file system. You can do this by clicking on the green `Clone or Download` button in the top right corner of the repository and then either downloading it as zip folder or copying the URL and using the command:
 ```
 git clone <repository url>
 ```
 to create a copy of the repository in whichever directory the command was run from.
 
-Next you will want to navigate to the project directory:
+Next, you will want to navigate to the project directory:
 ```
 cd <path to directory>
 ```
@@ -32,19 +32,25 @@ and then run
 ```
 npm i
 ```
-to install all depedancies and boom, its all set-up. The only thing left to do is to start the program which can be done by 
+to install all dependencies and boom, its all set-up. The only thing left to do is to start the program which can be done by 
 running:
 ```
 npm start
 ```
-that should open a new tab in your browser where you will see the deveopment build of the interactive-iPhone. Thanks to webpack magic any changes you make to the code will automatically sync with the browser, so now you're all ready to start playing around.
+that should open a new tab in your browser where you will see the development build of the interactive-iPhone. Thanks to webpack magic any changes you make to the code will automatically sync with the browser, so now you're all ready to start playing around.
 
 <img src="https://res.cloudinary.com/dufbyqbkk/image/upload/v1575371351/Screenshot_from_2019-12-03_13-01-18_nuccjs.png" />
 
 ## Contributing
 
-If this is your first time ever contributing to a open-source project then I would recomend checking out this quick, informative and interactive guide to get you started with understand the workflow: [First-Contribute](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
+If this is your first time ever contributing to an open-source project then I would recommend checking out this quick, informative and interactive guide to get you started with understanding the workflow: [First-Contribute](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
 
-Ready? - [CONTRIBUTING.md]()
+Ready? - [CONTRIBUTING.md](CONTRIBUTING.md)
 
-##### **Disclaimer** at this stage the readme is still incomplete but more is coming very soon.
+## License & Copyright
+
+Licensed under the [MIT license](LICENSE.md).
+
+This basically means that legally anyone can do absolutely anything they want with the software.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
