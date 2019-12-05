@@ -19,13 +19,13 @@ Built entirely with `HTML`, `CSS` and `JavaScript` and bundled with `Webpack`.
 ##### In order to partake you will need to have:
 
 1. A node dev environment set-up, here is a guide if you need to do that
-    * [Node dev env guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment) 
+* [Node dev env guide](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment) 
 2. A basic understanding of Git and GitHub, these tutorials by Colt Steele will sort you out in no time
-   * [Learn Git](https://www.youtube.com/watch?v=USjZcfj8yxE) 
-   * [Learn Github](https://www.youtube.com/watch?v=nhNq2kIvi9s)
-3. An understanding of HTML, CSS, and JavaScript (Dom manipulation), seriously, just go look into the `src` directory and you should notice a familiar file structure, no need to worry about all the scary config files, they work in the background, to understand more see my guide on how to add a new app. 
-    * [Adding a app]()
- 4. A willingness to participate, unfortunately, I don't have a guide for this, you either are or you aren't and it's fine either way, but I'd much prefer it if you were.
+* [Learn Git](https://www.youtube.com/watch?v=USjZcfj8yxE) 
+* [Learn Github](https://www.youtube.com/watch?v=nhNq2kIvi9s)
+3. An understanding of HTML, CSS, and JavaScript (Dom manipulation), seriously, just go look into the `src` directory and you should notice a familiar file structure, no need to worry about all the scary config files, they work in the background.
+
+4. A willingness to participate, unfortunately, I don't have a guide for this, you either are or you aren't and it's fine either way, but I'd much prefer it if you were.
  
 ## Installing Locally
 
