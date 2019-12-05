@@ -12,7 +12,7 @@ Built entirely with `HTML`, `CSS` and `JavaScript` and bundled with `Webpack`.
 
 ##### It is now my hope that other starting out developers will find this project as:
 
-1. A means to get practice with reading code and understanding someone else's code (My code isn't perfect but I've made it as readable as possible)
+1. A means to get practice with reading code and understanding someone else's code (My code isn't perfect but I've done my best)
 2. An opportunity to have a safe space in which to get used to the concepts of contributing to open-source projects
 3. Inspiration to hopefully create your own unique app and add it to the iPhone
 
