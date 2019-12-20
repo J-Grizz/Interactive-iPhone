@@ -19,4 +19,5 @@ I've made a list of suggestions incase you're wondering what to do:
 
 ##### Thank you so much to everyone who has made a contribution, the Interactive-iPhone has gained something from you and it is my hope that you have gained something from it in return.
 
+* [Yiğit Sözer](https://github.com/yittoo)
 * [James gray](https://github.com/J-Grizz)
