@@ -15,9 +15,10 @@ const controls = document.querySelector(".video-player .player-controls");
 const rotate = document.querySelector(".video-player .rotate");
 const resize = document.querySelector(".video-player .resize");
 const resizeIcon = document.querySelector(".video-player .resize i");
-const screenstateController = document.querySelector(".video-player .screenstate-buttons");
+const screenstateController = document.querySelector(
+  ".video-player .screenstate-buttons"
+);
 const screen = document.querySelector(".screen");
-
 
 //========================
 //      Listeners
@@ -36,7 +37,7 @@ skipButtons.forEach(button => button.addEventListener("click", skip));
 volumeSlider.addEventListener("change", slide);
 volumeSlider.addEventListener("mousemove", slide);
 
-// Controls video progress bar 
+// Controls video progress bar
 let mousedown = false;
 video.addEventListener("timeupdate", updateProgress);
 progress.addEventListener("click", scrub);
@@ -95,7 +96,6 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-
 // Rotation Logic
 function changeRotationState() {
   !rotated ? rotateLandscape() : rotatePortrait();
@@ -109,6 +109,8 @@ function rotateLandscape() {
   player.style.position = "static";
   video.style.transform = "rotate(-90deg)";
   video.style.width = "180%";
+  video.classList.add("video__on-to-landscape");
+  video.classList.remove("video__on-to-portrait");
   screenstateController.style.transform = "rotate(-90deg)";
   screenstateController.style.top = "15%";
   screenstateController.style.right = "75%";
@@ -123,6 +125,8 @@ function rotatePortrait() {
   player.style.position = "";
   video.style.transform = "";
   video.style.width = "";
+  video.classList.remove("video__on-to-landscape");
+  video.classList.add("video__on-to-portrait");
   screenstateController.style.transform = "";
   screenstateController.style.top = "";
   screenstateController.style.right = "";

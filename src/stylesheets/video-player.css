@@ -26,6 +26,41 @@
   transition: all 1s;
 }
 
+.video-player .video__on-to-landscape {
+  animation: toLandscape 1s linear;
+}
+
+@keyframes toLandscape {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+.video-player .video__on-to-portrait {
+  animation: toPortrait 1s linear;
+}
+
+@keyframes toPortrait {
+  0% {
+    width: 180%;
+    transform: rotate(-90deg);
+  }
+  80% {
+    width: 180%;
+    transform: rotate(-90deg);
+  }
+  100% {
+    width: 100%;
+    transform: rotate(0deg);
+  }
+}
+
 .video-player .screenstate-buttons {
   background-color: var(--silver);
   position: absolute;
